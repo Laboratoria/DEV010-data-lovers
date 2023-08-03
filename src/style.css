@@ -1,0 +1,90 @@
+body{
+    background-image:url('Imagenes/SALAR-DE-UYUNI-REVISTA-TIME.jpg');
+ 
+}
+
+h1{
+    display: flex; /* visualizar contenido  */
+    justify-content:center; /* se aplica a display: flex  para que el texto quede centrado*/
+    padding: 10px; 
+    background-color: #3ede2f; 
+    color: #f5eeee; /*Color de letra*/
+    margin: 40px;
+    }
+
+#Subdamerica{
+    width: 60px;
+}
+
+#root{
+    margin: 30px;
+    width: 800px; 
+}
+
+anside {
+    padding: 100px;           /* Espaciado interno en el aside */
+    display: flex-direction;
+    justify-content:space-between;
+    width: 250px; 
+    height: 40px; 
+    
+}
+
+anside button {               /* Estilos para los botones dentro de <aside> */
+    display: inline-block;    /* Hace que los botones se muestren en línea */
+    margin: 10px;           /* Margen izquierdo y derecho de los botones */
+    padding: 10px 15px;       /* Relleno interno de los botones */
+    cursor: pointer;          /* Cambia el cursor al pasar sobre los botones */   
+}
+
+
+
+footer {
+    text-align: center; /* Centra el contenido del pie de página */
+    background-color: #3ede2f ; /* Color de fondo del pie de página */
+    padding: 5px; /* Espaciado interno para el recuadro */
+    font-family: "arial", "helvetica", sans-serif; /* tipo de letra del pie de pagina */
+    color: #f5eeee;
+    margin: 40px;
+
+}
+
+footer{
+    font-size: 15px; /* cambia tamaño del letra de pagina */
+}
+
+.Bandera{
+    margin: 10PX;
+    width: 200PX;
+    height: 130PX;
+    font-size: 15px;
+} 
+
+/* Consulta de medios para dispositivos móviles */
+@media (max-width: 767px) {
+    /* Estilos específicos para dispositivos móviles */
+    h1 {
+        font-size: 24px;
+        margin: 20px;
+    }
+
+    anside {
+        padding: 5px;
+    }
+
+    anside button {
+        margin: 5px 10px;
+        padding: 5px 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

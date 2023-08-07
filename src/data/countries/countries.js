@@ -2675,9 +2675,9 @@ export default {
       "borders": [
         "BOL",
         "BRA",
-        "CHL",
-        "PRY",
-        "URY"
+        "CHI",
+        "PAR",
+        "URU"
       ],
       "area": 2780400,
       "flag": "🇦🇷",

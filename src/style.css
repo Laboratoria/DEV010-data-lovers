@@ -1,0 +1,52 @@
+
+/* HEADER*/
+.pokemon{
+    width: 20%;
+    position: absolute;
+    left: 500px;
+    top: 50px;
+}
+
+
+.pokebola-1 {
+    width: 10%;
+    margin: 0 0 40px 20px;
+    
+}
+
+.pokebola-2{
+    width: 10%;
+    margin: 20px;
+    position: absolute;
+    right: 100px;
+    top: 10px;
+}
+.pokemon-container {
+    border: 2px solid black;
+    display: inline-block;
+    flex-wrap: wrap;
+    margin: 10px;
+    width: 180px;
+    height: 260px;
+    text-align: center;
+    background-color: darkgrey;
+    border-radius: 10px;
+    
+
+}
+.pokemon-img{
+    width: 135px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+    background-color: black;
+    border-radius: 10px;
+
+}
+
+
+
+.pokemon-name {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}

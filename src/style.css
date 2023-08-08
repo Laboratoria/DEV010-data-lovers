@@ -1,5 +1,3 @@
-
-/* HEADER*/
 .pokemon{
     width: 20%;
     position: absolute;
@@ -7,11 +5,9 @@
     top: 50px;
 }
 
-
-.pokebola-1 {
+.pokebola-1{
     width: 10%;
     margin: 0 0 40px 20px;
-    
 }
 
 .pokebola-2{
@@ -40,11 +36,7 @@
     margin: 0 auto;
     background-color: black;
     border-radius: 10px;
-
 }
-
-
-
 .pokemon-name {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;

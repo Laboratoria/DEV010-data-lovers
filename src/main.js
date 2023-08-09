@@ -1,4 +1,4 @@
-import { example } from './data.js';
+import { example, filtrarIdioma } from './data.js';
 import data from './data/countries/countries.js';
 
 console.log(example, data);
@@ -9,29 +9,34 @@ const root = document.getElementById('root');
 
 //movimiento de las banderas 
 
-let contentRootInfo = '';
-for (let i = 0; i < data.countries.length; i++) {
-  if (data.countries[i].subregion === 'South America') {
-      const country = data.countries[i];
-      const languages = Object.values(country.languages).join(', ');
 
-      contentRootInfo += `<div class="bandera-container">
-          <div class="bandera-wrapper">
-              <img src="${country.flags.png}" class="Bandera" id="bandera-${i}">
-              <h4>${country.name.common}</h4> 
-          </div>
-          <div class="info-back">
-              <h4>${country.name.common}</h4>
-              <p>Población: ${country.population}</p>
-              <p>Área: ${country.area}</p>
-              <p>Países Frontera: ${country.borders}</p>
-              <p>Idiomas: ${languages}</p>
-          </div>
-      </div>`;
+function pintarData (data){
+  let contentRootInfo = '';
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].subregion === 'South America') {
+        const country = data[i];
+        const languages = Object.values(country.languages).join(', ');
+  
+        contentRootInfo += `<div class="bandera-container">
+            <div class="bandera-wrapper">
+                <img src="${country.flags.png}" class="Bandera" id="bandera-${i}">
+                <h4>${country.name.common}</h4> 
+            </div>
+            <div class="info-back">
+                <h4>${country.name.common}</h4>
+                <p>Población: ${country.population}</p>
+                <p>Área: ${country.area}</p>
+                <p>Países Frontera: ${country.borders}</p>
+                <p>Idiomas: ${languages}</p>
+            </div>
+        </div>`;
+    }
   }
+  root.innerHTML=contentRootInfo;
 }
+pintarData(data.countries)
 
-root.innerHTML=contentRootInfo;
+
 
 const banderaImages = document.querySelectorAll('.Bandera');
 
@@ -53,7 +58,7 @@ banderaImages.forEach(image => {
 //Boton de filtros paises limitantes.
 
 // Debemos llamar las funciones que vamos a uctilizar 
-const  btnLimites = document.getElementById('limitantes'); // El boton 
+const  btnLimites = document.getElementById('limitantes'); // paises limitantes 
 
 btnLimites.addEventListener("click", function () { // Activo la funcion del botones
   const inputPais = document.getElementById('input'); // Traigo el inpu que se creo para colocar el nombre 
@@ -85,38 +90,57 @@ btnLimites.addEventListener("click", function () { // Activo la funcion del boto
 
   btnIdioma.addEventListener('click',function () {
     const inputIdioma = document.getElementById('input');
-    for (let i=0; i<data.countries.length; i++){
-      let lenguajes = data.countries[i].languages;
-      for(const key in lenguajes) {
-        if(lenguajes[key]=== inputIdioma.value) {
-          banderasByIdioma += `<div class="bandera-wrapper"> 
-              <img src="${data.countries[i].flags.png}" class="Bandera" 
-              <h4>${data.countries[i].name.common}</h4> 
-             </div>`;
-        }
-      }    
-    }
-    root.innerHTML = banderasByIdioma;
+    console.log(filtrarIdioma(data.countries, inputIdioma))
+    const dataFiltradaPorIdioma = filtrarIdioma(data.countries, inputIdioma)
+    pintarData(dataFiltradaPorIdioma)
+    // for (let i=0; i<data.countries.length; i++){
+    //   let lenguajes = data.countries[i].languages;
+    //   for(const key in lenguajes) {
+    //     if(lenguajes[key]=== inputIdioma.value) {
+    //       banderasByIdioma += `<div class="bandera-wrapper"> 
+    //           <img src="${data.countries[i].flags.png}" class="Bandera" 
+    //           <h4>${data.countries[i].name.common}</h4> 
+    //          </div>`;
+    //     }
+    //   }    
+    // }
+    // root.innerHTML = banderasByIdioma;
   })
 
 
+/*calcular área entre dos paises
+
+const Resultado =document.getElementById ('Resultado') 
+const areaForm = document.getElementById('areaForm');
+
+Resultado.addEventListener("Click", function(Event) {
+Event.preventDefault() ;
 
 
+const  area1 = parseFloat(document.getElementById('area1').value);
+const  area2 = parseFloat(document.getElementById('area2').value);
+
+let areaCountry1 = 0;
+let areaCountry2 = 0;
+
+for (let i = 0; i < data.countries.length; i++) {
+  if (data.countries[i].name.common.toLowerCase() === inputPais.value.toLowerCase()) {
+    areaCountry1 = data.countries[i].area || 0; // Si no hay área, establecer a 0
+    break; // Salir del bucle una vez encontrado el país
+  }
+}
+
+// Calcular el total de áreas
+const totalArea = area1 * areaCountry1 + area2 * areaCountry2;
+
+Resultado.textContent = `Área total: ${totalArea} km²`;
+});*/
+    
+
+  
+
+   
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 

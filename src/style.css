@@ -5,7 +5,6 @@ body {
     background-image: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
     margin: 0; /* Establece márgenes a cero para evitar espacios no deseados */
     padding: 20px; /* Agrega un espaciado interno a todo el cuerpo */
-    
     display: flex; /* Usa el modelo de flexbox para organizar elementos en el cuerpo */
     flex-wrap: wrap;  /* Ajusta la distribución de elementos en filas y columnas */
     justify-content: center; /* Centra los elementos horizontalmente en el cuerpo */
@@ -23,14 +22,12 @@ header {
   }
   
   img {
-    width: 20%; /* Ancho de la imagen */
-    height: 20%; /* Altura de la imagen */
+    width: 30%; /* Ancho de la imagen */
+    height: auto; /* Altura de la imagen */
     display: block;
     margin: 0 auto;
-    width: 20%;
-    height: auto;
   }
-  
+
   .image-button {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/769px-Pokebola-pokeball-png-0.png');
     background-size: cover;
@@ -42,16 +39,17 @@ header {
     border-radius: 50%; 
 
 }
+
   
 .imagen-button2 {
-background-image: url('https://www.pngall.com/wp-content/uploads/4/Pokemon-Pokeball-Transparent.png');   /* Imagen de fondo del boton */
-background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el boton */
-background-position: center; /* Centra la imagen de fondo en el boton */
-border: none; /* Elimina cualquier borde alrededor del boton */
-width: 50px; /* Ancho del boton */
-height: 50px; /* Altura del boton */
-cursor: pointer; /* Cambia el cursor del mouse al pasar por encima del boton */
-border-radius: 50%; /* Redondea las esquinas del boton para hacerlo circular */
+    background-image: url('https://www.pngall.com/wp-content/uploads/4/Pokemon-Pokeball-Transparent.png');   /* Imagen de fondo del boton */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el boton */
+    background-position: center; /* Centra la imagen de fondo en el boton */
+    border: none; /* Elimina cualquier borde alrededor del boton */
+    width: 50px; /* Ancho del boton */
+    height: 50px; /* Altura del boton */
+    cursor: pointer; /* Cambia el cursor del mouse al pasar por encima del boton */
+    border-radius: 50%; /* Redondea las esquinas del boton para hacerlo circular */
 
 }
 
@@ -60,9 +58,8 @@ border-radius: 50%; /* Redondea las esquinas del boton para hacerlo circular */
     font-family: "Flexo-Regular",arial,sans-serif;
     background-color:  rgb(230, 230, 231);/* Color de fondo de la tarjeta */
     border-radius: 10px; /* Redondea las esquinas de la tarjeta */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);/* Agrega una sombra a la tarjeta para dar profundidad */
     margin: 10px;/* Margen alrededor de la tarjeta */
-    padding: 40px;/* Espaciado interno a la tarjeta */
+    padding: 30px;/* Espaciado interno a la tarjeta */
     width: 250px;/* Define un ancho fijo para la tarjeta */
     text-align: center;   /* Centra el contenido en el centro horizontal de la tarjeta */
 }
@@ -87,4 +84,18 @@ border-radius: 50%; /* Redondea las esquinas del boton para hacerlo circular */
 
 .card:hover .additional-info {
     display: block; /* Mostrar información adicional en hover */
+}
+
+.image-button::after{
+content: "GO"; /* Agregar el texto "IR" como contenido después del botón */
+opacity: 0; /* Ocultar el texto */
+transition: opacity 0.3s ease-in-out; /* Agregar una transición suave */
+color:  #fbcb04;
+font-size: 25px;
+}
+
+.image-button:hover::after {
+    opacity: 1; /* Mostrar el texto "IR" cuando el cursor está sobre el botón */
+    font-size: 25px;
+    font-weight: bold;
 }

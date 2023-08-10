@@ -1,4 +1,5 @@
 // gracias gaby 
+//Creo que lo logramos!!!
 // Importa los datos de los Pokémon
  
 import pokemonData from './data/pokemon/pokemon.js';

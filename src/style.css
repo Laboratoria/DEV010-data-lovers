@@ -1,0 +1,62 @@
+body{
+    background-image:url('Imagenes/SALAR-DE-UYUNI-REVISTA-TIME.jpg');
+ 
+}
+
+h1{
+    display: flex; /* visualizar contenido  */
+    justify-content:center; /* se aplica a display: flex  para que el texto quede centrado*/
+    padding: 10px; 
+    background-color: #3ede2f; 
+    color: #f5eeee; /*Color de letra*/
+    margin: 40px;
+    }
+
+#Subdamerica{
+    width: 60px;
+}
+
+#root{
+    margin: 30px;
+    width: 800px; 
+}
+
+button{
+    display: flex-direction;
+    justify-content:center;
+    width: 250px; 
+    height: 40px; 
+    padding: 10px;
+    background-color:  rgb(227, 233, 220);
+}
+
+footer {
+    text-align: center; /* Centra el contenido del pie de página */
+    background-color: #3ede2f ; /* Color de fondo del pie de página */
+    padding: 5px; /* Espaciado interno para el recuadro */
+    font-family: "arial", "helvetica", sans-serif; /* tipo de letra del pie de pagina */
+    color: #f5eeee;
+    margin: 40px;
+
+}
+
+footer p {
+    font-size: 15px; /* cambia tamaño del letra de pagina */
+}
+
+.Bandera{
+    margin: 10PX;
+    width: 200PX;
+    height: 130PX;
+    font-size: 15px;
+} 
+
+
+
+
+
+
+
+
+
+

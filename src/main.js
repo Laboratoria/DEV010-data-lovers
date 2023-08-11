@@ -40,23 +40,9 @@ const inputElement = document.getElementById("input");
 const btnBuscar = document.getElementById("btn-buscar");
 
 btnBuscar.addEventListener("click", () => {
-  const recibeNomNum = inputElement.value.trim();
+  const recibeNomNum = inputElement.value;
 
-  const partes = recibeNomNum.split(" ");
-  let name = "";
-  let num = "";
-  if (partes.length === 1) {
-    name = partes[0];
-  }
-  else if (partes.length === 2){
-    num = partes[0];
-    name = partes[1];
-  }
-  else {
-    console.error("Formato incorrecto. Ingresa nombre o número de Pokémon.");
-    return;
-  }
-  const busquedaInfo = busquedaNomNum(data, name, num);
+  const busquedaInfo = busquedaNomNum(data, recibeNomNum);
   //return pokemon.name.includes(recibeNomNum);
   rootElement.innerHTML = "";
   if (busquedaInfo) {
@@ -89,3 +75,18 @@ btnType.addEventListener("click", () => {
 
   if(recibeNomNum === "string")
   btnBuscar.addEventListener("click", )*/
+
+  /* const partes = recibeNomNum.split(" ");
+  let name = "";
+  let num = "";
+  if (partes.length === 1) {
+    name = partes[0];
+  }
+  else if (partes.length === 2){
+    num = partes[0];
+    name = partes[1];
+  }
+  else {
+    console.error("Formato incorrecto. Ingresa nombre o número de Pokémon.");
+    return;
+  }*/

@@ -35,7 +35,7 @@ function pokemonCards(pokemonArray){
 document.addEventListener('DOMContentLoaded', () => {
   pokemonCards(data.pokemon);
 });
-
+// BUSQUEDA POR NOMBRE O NUMERO 
 const inputElement = document.getElementById("input");
 const btnBuscar = document.getElementById("btn-buscar");
 
@@ -53,7 +53,7 @@ btnBuscar.addEventListener("click", () => {
 });
 //else{ TypeError("El pokemon que buscaste no esta disponible")
   
-
+//BUSQUEDA POR ELEMENTO
 const btnType = document.getElementById("btn-buscarType");
 const tipoDeSeleccion = document.getElementById("types");
 

@@ -1,0 +1,174 @@
+
+.card:hover { 
+	cursor: pointer;
+	filter: grayscale(50%);
+	-webkit-filter: grayscale(50%);
+	-moz-filter: grayscale(50%);
+	-ms-filter: grayscale(50%);
+	-o-filter: grayscale(50%);
+  display: flex-wrap;
+
+}
+.card {
+    border:7px;
+    border-radius: 7%;
+    border-style:double;
+    color: #BF80A3;
+
+    opacity: 1;
+
+}
+body {
+    background-image: url(https://i.ibb.co/Vwbzysk/image-2.jpg);
+    background-repeat: repeat;
+    background-size: 1550px 650px;
+    
+}
+#principalDiv {
+    max-width: 800px;
+    
+}
+#cards {
+    display: flex;
+    justify-content:center;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 40px;
+    margin: 2% 2% 2% 2%;
+
+}
+
+footer {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 0;
+    width: 99%;
+    height: 40px;
+    color:#89728C;
+    margin-bottom: auto;
+    
+}
+
+h1 {
+    font-size: 200%;
+    text-align:left;
+    font-family: 'Lobster';
+    text-shadow: -2px -2px 1px #ffffff, 2px 2px 1px #ffffff, -2px 2px 1px #ffffff, 2px -2px 1px #ffffff;
+    color:#BF80A3;
+
+}
+
+#btnAllCards {
+    font-size: 25px;
+    background-color: #C9D6E9;
+    justify-content: flex-end;
+    margin-right:3%;
+    margin-left: 20%;
+    border-color: #89728C;
+    border-radius: 12px;
+    margin-bottom: 20px;
+
+
+}
+#btnAllCards:hover {
+    background-color:#ffffff;
+}
+    
+#Arcanos {
+    justify-content: flex-end;
+}
+#Tipos {
+    justify-content: flex-end;
+}
+
+.container {
+    font-size: large;
+    text-align: center;
+    justify-content: flex-end;
+}  
+
+.imgClass {
+    border-radius: 15px;
+    max-height: 250px;
+    width: auto;
+}
+.card {
+    display: inline-block;
+    /*opacity: 0.7;*/
+}
+/*.container {
+    
+}*/
+#btninput {
+    font-size: 15px;
+    background-color: #C9D6E9;
+    border-color: #89728C;
+    border-radius: 15px;
+    margin-left: 5px;
+}
+#btninput:hover {
+    background-color: #ffffff;
+}
+
+
+#selectArcanos {
+   background-color: #D5E5F2;
+   font-size: 25px;
+   border-radius: 15px;
+   border-color:#89728C;
+}
+    
+#selectTipos {
+    background-color:#d5a3be;
+    font-size: 25px;
+    border-radius: 15px;
+    border-color: #89728C;
+    
+}
+
+.clase {
+    font-size: 150%;
+    font-family:fantasy;
+}
+
+/*#boton-tipos {
+    display: block;
+    background-color:#BF80B5;
+    font-size:10px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size: medium;
+    color:white;
+    border: 1px solid silver;
+    border-radius: 30px;
+    width:150px;
+    height:50px;
+    cursor: hand;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content:center; 
+    align-items: center; 
+    gap: 8px;
+}*/
+
+/*button:active {
+    display: block;
+    background-color:#89728C;
+    font-size:10px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size: medium;
+    color:white;
+    border:20px;
+    border-radius: 20px;
+    width:150px;
+    height:50px;
+    cursor: hand;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center; 
+    align-items: center; 
+    gap: 8px; 
+}*/

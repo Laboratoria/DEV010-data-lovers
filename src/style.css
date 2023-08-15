@@ -65,7 +65,7 @@ header {
 }
 
 .card img {
-    width: 180px; /* Establecer un ancho específico */
+    width: 100px; /* Establecer un ancho específico */
     height: auto;
 }
 

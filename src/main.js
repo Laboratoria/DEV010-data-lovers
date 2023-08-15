@@ -18,10 +18,10 @@ for (const pokemon of pokemons) {
         <p> ${pokemon['pokemon-rarity']}</p>
         <p> ${pokemon.type}</p>
         <p> About: ${pokemon.about}</p>
-        <p> Evolution: ${pokemon.evolution}</p>
         <p> ${pokemon.generation.num}</p>
-        <p> Quick move: ${pokemon['special-attack']}</p>
+        <p> Quick move: ${pokemon['quick-move']}</p>
         <p> Resistant: ${pokemon.resistant}</p>
+        <p> Weaknesses: ${pokemon.weaknesses}</p>
         </div>
     `;
 

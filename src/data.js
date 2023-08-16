@@ -13,3 +13,12 @@ function generateResistantList(resistantTypes) {
 function generateWeaknessesList(weaknessesTypes) {
   return weaknessesTypes.join(', ');
 } 
+
+
+export {
+  filterPokemonsByType,
+  generateQuickMoveNames,
+  generateResistantList,
+  generateWeaknessesList
+};
+

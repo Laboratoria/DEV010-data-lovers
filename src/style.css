@@ -53,32 +53,99 @@ header {
 
 }
 
-/* Estilos para las tarjetas */
+/* Estilos para el contenedor de las tarjetas */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Espacio entre tarjetas */
+    margin: 50px; 
+}
 .card {
+    text-align: center;
     font-family: "Flexo-Regular",arial,sans-serif;
     background-color:  rgb(230, 230, 231);/* Color de fondo de la tarjeta */
     border-radius: 10px; /* Redondea las esquinas de la tarjeta */
-    margin: 10px;/* Margen alrededor de la tarjeta */
-    padding: 30px;/* Espaciado interno a la tarjeta */
-    width: 250px;/* Define un ancho fijo para la tarjeta */
-    text-align: center;   /* Centra el contenido en el centro horizontal de la tarjeta */
+    margin: 20px;/* Margen alrededor de la tarjeta */
+    padding: 5px;/* Espaciado interno a la tarjeta */
+      /* Centra el contenido en el centro horizontal de la tarjeta */
+    width: calc(25% - 30px); /* Ancho de cada tarjeta */
 }
 
+
 .card img {
-    width: 180px; /* Establecer un ancho específico */
+    width: 150px; /* Establecer un ancho específico */
     height: auto;
 }
 
-.card h2 {
+.card h2::first-letter { /* Nombre del pokemon*/
+    text-transform: uppercase;
     margin-top: 10px;
     font-size: 1.2em;
 }
 
-.card p {
+.card p1{ 
+    text-align: justify;
     margin: 10px 0;
     font-size: 0.9em;
+    color:black;
 }
-.card .additional-info {
+.card p2{ 
+    text-transform: capitalize;
+    text-align: justify;
+    margin: 10px 0;
+    font-size: 0.9em;
+    color:rgb(86, 40, 203);
+    background-color: #eff1f5 ;
+}
+.card p3{ 
+    text-transform: capitalize;
+    text-align: justify;
+    margin: 10px 0;
+    font-size: 0.9em;
+    color:rgb(47, 214, 147);
+    background-color: #eff1f5 ;
+}
+.card p4{ 
+    text-transform: capitalize;
+    text-align: justify;
+    margin: 10px 0;
+    font-size: 0.9em;
+    color:rgb(235, 131, 34);
+    background-color: #eff1f5 ;
+}
+.card p5{ 
+    text-transform: capitalize;
+    text-align: justify;
+    margin: 10px 0;
+    font-size: 0.9em;
+    color:rgb(146, 113, 217);
+    background-color: #eff1f5 ;
+}
+.card p6{ 
+    text-transform: capitalize;
+    text-align: justify;
+    margin: 10px 0;
+    font-size: 0.9em;
+    color: #fbcb04 ;
+    background-color: #eff1f5 ;
+}
+.card p7{ 
+    text-transform: capitalize;
+    text-align: justify;
+    margin: 10px 0;
+    font-size: 0.9em;
+    color:rgb(228, 23, 23);
+    background-color: #eff1f5 ;
+}
+
+.card h3 {
+    text-align: center;
+    font-size: 1em;
+}
+
+.card .additional-info{
+    text-align: justify;
     display: none; /* Ocultar información adicional por defecto */
 }
 
@@ -98,4 +165,13 @@ font-size: 25px;
     opacity: 1; /* Mostrar el texto "IR" cuando el cursor está sobre el botón */
     font-size: 25px;
     font-weight: bold;
+}
+select {
+    background: rgb(246, 206, 171);
+    border: solid;
+    border-color: rgb(227, 124, 34);
+    font-size: 14px;
+    height: auto;
+    padding: 5px;
+    width: 150px;
 }

@@ -1,29 +1,72 @@
 // gracias gaby 
 //Creo que lo logramos!!!
 // Importa los datos de los Pokémon
- 
+import { filterPokemonsByType, generateQuickMoveNames, generateResistantList, generateWeaknessesList } from './data.js';
 import pokemonData from './data/pokemon/pokemon.js';
 
-const pokemons = pokemonData.pokemon; // Accede a la propiedad "pokemon"
+// Obtiene los datos de los pokémones
+const pokemons = pokemonData.pokemon;
 
-for (const pokemon of pokemons) {
-    const card = document.createElement('div'); // For recorre el arreglo pokemons, crea un nuevo elemento <div> para cada elemento en el arreglo y le añade la clase card. 
+// Obtiene el contenedor donde se mostrarán las tarjetas
+const pokemonContainer = document.getElementById('pokemon-container');
+
+// Genera una tarjeta HTML para un Pokémon dado
+function generatePokemonCard(pokemon) {
+    const card = document.createElement('div');
     card.classList.add('card');
-//Informacion que se mostrara de cada Tarjeta 
+
+    // Genera listas de movimientos, resistencias y debilidades
+    const quickMoveNames = generateQuickMoveNames(pokemon['quick-move']);
+    const resistantList = generateResistantList(pokemon.resistant);
+    const weaknessesList = generateWeaknessesList(pokemon.weaknesses);
+
+    // Llena la tarjeta con información del Pokémon
     card.innerHTML = `  
         <img src="${pokemon.img}" alt="${pokemon.name}"> 
-        <p>#${pokemon.num}</p>
-        <h2> ${pokemon.name}</h2>  
+        <h3>#${pokemon.num}</h3>
+        <h2>${pokemon.name}</h2>  
         <div class="additional-info"> 
-        <p> ${pokemon['pokemon-rarity']}</p>
-        <p> ${pokemon.type}</p>
-        <p> About: ${pokemon.about}</p>
-        <p> ${pokemon.generation.num}</p>
-        <p> Quick move: ${pokemon['quick-move']}</p>
-        <p> Resistant: ${pokemon.resistant}</p>
-        <p> Weaknesses: ${pokemon.weaknesses}</p>
+        <p1>About: ${pokemon.about}</p1> <br> <br><hr>
+        <p2>Rarity: ${pokemon['pokemon-rarity']}</p2><br><br>
+        <p3>Type: ${pokemon.type.join(', ')}</p3><br><br>
+        <p4>${pokemon.generation.num}</p4><br><br>
+        <p5>Quick move: ${quickMoveNames}</p5><br><br>
+        <p6>Resistant: ${resistantList}</p6><br><br>
+        <p7>Weaknesses: ${weaknessesList}</p7><br><br>
         </div>
     `;
 
-    document.body.appendChild(card); //Agrega el elemento card como un hijo del elemento body, para que el elemento card se muestre en la página, dentro del contenido principal.
+    return card;
 }
+
+// Función para mostrar los pokémones según el tipo seleccionado
+function showPokemons(selectedType) {
+    pokemonContainer.innerHTML = ''; // Limpia el contenedor antes de agregar tarjetas
+
+    // Si no se selecciona un tipo específico, muestra todos los pokémones
+    if (selectedType === '') {
+        for (const pokemon of pokemons) {
+            const card = generatePokemonCard(pokemon);
+            pokemonContainer.appendChild(card);
+        }
+    } else {
+        // Filtra y muestra los pokémones según el tipo seleccionado
+        const filteredPokemons = filterPokemonsByType(pokemons, selectedType);
+        for (const pokemon of filteredPokemons) {
+            const card = generatePokemonCard(pokemon);
+            pokemonContainer.appendChild(card);
+        }
+    }
+}
+
+// Obtiene el elemento select de tipos
+const typeSelect = document.getElementById('type-select');
+// Agrega un evento para detectar cambios en la selección de tipos
+typeSelect.addEventListener('change', event => {
+    const selectedType = event.target.value;
+    showPokemons(selectedType);
+});
+
+
+// Mostrar todos los pokémones al cargar la página inicialmente
+showPokemons(''); // Mostrar todos los pokémones al principio

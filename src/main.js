@@ -1,27 +1,21 @@
-// Importa los datos de los Pokémon
- 
-import pokemonData from './data/pokemon/pokemon.js';
-
-const pokemons = pokemonData.pokemon; // Accede a la propiedad "pokemon"
-
-for (const pokemon of pokemons) {
-    const card = document.createElement('div'); // For recorre el arreglo pokemons, crea un nuevo elemento <div> para cada elemento en el arreglo y le añade la clase card. 
-    card.classList.add('card');
-//Informacion que se mostrara de cada Tarjeta 
-    card.innerHTML = `  
-        <img src="${pokemon.img}" alt="${pokemon.name}"> 
-        <p>#${pokemon.num}</p>
-        <h2> ${pokemon.name}</h2>  
-        <div class="additional-info"> 
-        <p> ${pokemon['pokemon-rarity']}</p>
-        <p> ${pokemon.type}</p>
-        <p> About: ${pokemon.about}</p>
-        <p> Evolution: ${pokemon.evolution}</p>
-        <p> ${pokemon.generation.num}</p>
-        <p> Quick move: ${pokemon['special-attack']}</p>
-        <p> Resistant: ${pokemon.resistant}</p>
-        </div>
-    `;
-
-    document.body.appendChild(card); //Agrega el elemento card como un hijo del elemento body, para que el elemento card se muestre en la página, dentro del contenido principal.
-}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Data Lovers</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+    <header>
+      <img src="https://1000marcas.net/wp-content/uploads/2020/01/Logo-Pokemon.png" alt="Logo de Pokémon">
+    </header>
+  <body>
+  <img src="https://www.megaidea.net/wp-content/uploads/2021/08/Pokemon30.png" alt="Imagen de pokemones">
+    <div id="root"></div>
+        <header>
+          <form action="pokemon.html">
+          <button id ='boton' name="info" class="image-button"></button> 
+          </form>
+    </header>
+  </body>
+</html>

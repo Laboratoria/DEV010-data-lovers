@@ -1,0 +1,302 @@
+body {
+    background-image: url('https://media.admagazine.com/photos/618a6b8e3174d0288cf2d478/master/w_1600%2Cc_limit/33730.jpg');
+    margin: 0;
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el cuerpo */
+    background-position: center center; /* Centra la imagen de fondo en el cuerpo */
+    
+}
+    
+
+
+h1{
+    display: flex; /* visualizar contenido  */
+    justify-content:center; /* se aplica a display: center para que el texto quede centrado*/
+    padding: 10px; 
+    background-color: #eaf0e9; 
+    color: #250ac2; /*Color de letra*/
+    margin: 40px;
+    border-radius: 15px; 
+    }
+
+#sudamerica{ /* imagen que esta en el titulo*/
+    width: 60px;
+}
+
+#root{  /* todo lo del estilo cajon de banderas*/
+    display: grid; /* crea una cuadricula flrxible*/
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /*Distribuir las columnas segun ancho de pagina */
+    gap: 40px; /*establece espacio entre imagenes */
+    padding: 10px; 
+    margin: 40px;
+    justify-items: center;
+    align-items: center;
+    }
+    
+header button {
+    display: inline-block;    /* Hace que los botones se muestren en línea */
+    margin: 5px;           /* Margen izquierdo y derecho de los botones */
+    padding: 5px 8px;       /* Relleno interno de los botones */
+    cursor: pointer;          /* Cambia el cursor al pasar sobre los botones */   
+    border-radius: 15px; 
+    font-size: 15;   
+    display: flex;
+}
+
+
+
+footer {
+    text-align: center; /* Centra el contenido del pie de página */
+    background-color: #e6eee6 ; /* Color de fondo del pie de página */
+    padding: 5px; /* Espaciado interno para el recuadro */
+    font-family: "arial", "helvetica", sans-serif; /* tipo de letra del pie de pagina */
+    color: #250ac2;
+    margin: 40px;
+    font-size: 15px; /* cambia tamaño del letra de pagina */
+    
+
+}
+
+.Bandera{  /*estilo de banderas */
+    width: 100%;
+    height: 100%; /* Ajusta el ancho de las banderas (25% para cuatro en una fila) */
+    margin: 10px; /* Espacio entre las banderas */
+    box-sizing: border-box;
+    border: 15px solid #fefeff;
+    border-radius: 15px
+}
+
+    
+
+
+h4{
+    color: #04000e;
+    font-size: 20px;
+    margin: 0px;
+}
+
+.Bandera.rotate {
+    transform: rotateY(180deg);  /* Gira la imagen en el eje Y, creando un efecto de volteo */
+    overflow: hidden;           /* Oculta el contenido que se desborda del contenedor */
+    z-index: 1;                 /* Establece el índice z para controlar la superposición de elementos */
+              
+}
+
+
+
+@media (max-width: 768px)  { /* Estilos específicos para dispositivos móviles */
+    h1 {
+        font-size: 20px;
+        
+    }
+
+    header {
+        padding: 15px;
+        
+    }
+
+    header button {
+        margin: 10px 30px;
+        padding: 15px 15px;
+    }
+}
+
+.BanderaContenedor { 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+
+
+/* Estilos para el contenedor envolvente de la bandera */
+.bandera-wrapper {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+
+.bandera-container.show-info {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    position: fixed;    /* Posición fija en la ventana del navegador */
+    top: 0;   /* Ubicación en la parte superior de la ventana */
+    left: 0;  /* Ubicación en el extremo izquierdo de la ventana */
+    width: 100%;   /* Ancho ocupa toda la ventana */
+    height: 100%;   /* Alto ocupa toda la ventana */
+    display: center; /* Utiliza el modelo de caja flexible */
+    justify-content: center;  /* Centra elementos horizontalmente */
+    align-items: center;   /* Centra elementos verticalmente */
+    background-color: rgba(25, 24, 24, 0.8); /* Fondo semitransparente para el efecto de superposición */
+    z-index: 9999;  /* Capa de apilamiento alta para mostrar encima de otros elementos */
+  }
+
+.info-back {
+    
+    height: 15%;  /*Alto de la tarjeta trasera en relación al contenedor envolvente */
+    width: 15%;   /* Ancho de la tarjeta trasera en relación al contenedor envolvente */
+    background-color: rgb(138, 177, 216);  /* Color de fondo de la tarjeta trasera */
+    border-radius: 5px; /* Borde redondeado para la tarjeta trasera */
+    display: none;  /* Oculta la tarjeta trasera por defecto */
+    opacity: 0;  /* Opacidad inicial de la tarjeta trasera (transparente) */
+    transform: rotateY(180deg) scale(0);  /* Volteo y escala para animación de entrada */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out;   /* Transiciones suaves para animaciones */
+    display: flex;  /* Utiliza el modelo de caja flexible para contenido interno */
+    flex-direction: column;   /* Alinea elementos verticalmente en una columna */
+    justify-content: 100%; /* Ajusta el ancho del texto al 100% del contenedor */
+    position: absolute; /* Posiciona el elemento de forma absoluta en relación a su contenedor padre */
+    z-index: 2; /* Establece un índice z mayor para el cuadro de texto */
+    padding: 3px; /* Agrega un margen alrededor del contenido del cuadro */
+    box-sizing: 100%; /* Incluye el padding en el ancho y alto total del elemento */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    overflow: visible; /* Oculta el texto que desborda el contenedor */
+    text-overflow: ellipsis; /* Muestra "..." al final del texto que desborda */
+}
+ 
+.info-back{
+    white-space: normal ;  /* Controla cómo se manejan los espacios en blanco y saltos de línea */
+    word-break: break-all;  /* Controla cómo se rompen las palabras en caso de que excedan el ancho */
+}    
+
+/* Estilos para mostrar la información ampliada en la bandera (parte trasera) */
+.bandera-container.show-info .info-back {
+    display: center;   /* Muestra el contenido de la parte trasera */
+    opacity: 1;  /* Opacidad completa para hacer visible el contenido */
+    transform: rotateY(0deg) scale(2); /* Vuelve a la posición normal y escala la tarjeta */
+}
+
+/* Estilos para el título en la parte trasera de la bandera */
+.info-back h4{
+    display: flex; /* Utiliza el modelo de caja flexible */
+    justify-content: center;  /* Centra el contenido horizontalmente */
+}
+
+.info-back p{
+    font-size: 40%;
+    line-height: 0.2;
+}
+
+label {
+    font-weight: bold;
+    color: #f0edf7;
+    font-size: 25px;
+    margin: 5px;
+    display: start; /* visualizar contenido  */
+    justify-content: center;
+    /*border: 1px solid #ccc;*/
+    
+
+}
+
+input {color: #03000a;
+    font-size: 15px;
+    padding: 1px;
+    width: 120px; /* Ancho personalizado */
+    height: 1px; /* Altura personalizada */
+    padding: 10px; /* Espacio interno */
+    font-size: 15px; /* Tamaño de fuente */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 5px; /* Borde redondeado */
+    
+    
+    
+} 
+
+#limites{
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex; /* visualizar contenido  */
+    justify-content: center;
+    width: 150px; 
+    margin-left:  400px;
+    border-radius: 10px;
+    cursor: pointer; 
+    
+    }
+    
+    
+    
+    
+#areaForm {
+    display: flex; /* visualizar contenido  */
+    justify-content: flex-end; /* se aplica a display: center para que el texto quede centrado*/
+    padding: 10px; 
+    /*background-color: #f7faf6; */
+    color: #250ac2; /*Color de letra*/
+    margin: 40px;
+    order: 1px solid #ccc;
+    height: 200px;
+    }
+    
+
+#opciones {
+    display: flex; /* visualizar contenido  */
+    justify-content:start; /* se aplica a display: center para que el texto quede centrado*/
+    padding: 5px; 
+    color: #250ac2; /*Color de letra*/
+    margin-left: 50px;
+    border-radius: 15px; 
+    cursor: pointer; 
+    font-weight: bold;
+    }
+
+.button{
+
+    font-weight: bold;
+    color: #240a61;
+    font-size: 12px;
+    border: none;
+    text-align: center;
+    direction: column;
+    justify-content: space-between;
+    display: flex; /* visualizar contenido  */
+    justify-content:start; /* se aplica a display: center para que el texto quede centrado*/
+    padding: 5px; 
+    color: #250ac2; /*Color de letra*/
+    margin-left: 50px;
+    border-radius: 15px; 
+    cursor: pointer; 
+    }
+
+#idioma {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex; /* visualizar contenido  */
+    justify-content: center;
+    width: 150px; 
+    margin-left:  400px;
+    border-radius: 10px;
+    cursor: pointer; 
+    
+    }
+
+  
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

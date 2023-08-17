@@ -26,6 +26,7 @@ export const calcularArea = (data, inpuCalcular1,inpuCalcular2) =>{
   }
 };
 
+// Ordenar paises 
 export const ordenar = (banderas, tipo) => {
   const banderasClonadas = [...banderas]; // Clona las banderas existentes
   banderasClonadas.sort((a, b) => { //// Ordena las banderas clonadas por nombre de A a Z
@@ -41,15 +42,16 @@ export const ordenar = (banderas, tipo) => {
   });
 
   return banderasClonadas;
+  
 };
 // Data por Limites 
 export const filtrarPaisesLimitantes = (data, paisElegido) => {
   const paisesLimitantes = [];
   const pais = data.countries.find(pais => pais.name.common === paisElegido); // Buscamos el país que el usuario eligió
-    if (pais) { // Si encontramos el país, buscamos sus países vecinos
+      if (pais) { // Si encontramos el país, buscamos sus países vecinos
     pais.borders.forEach(border => {
       const paisVecino = data.countries.find(pais => pais.fifa=== border);
-    if (paisVecino) {
+      if (paisVecino) {
         paisesLimitantes.push(paisVecino);
       }
     });

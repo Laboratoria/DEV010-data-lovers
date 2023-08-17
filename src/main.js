@@ -17,7 +17,7 @@ function ocultarContenidos() {
   document.getElementById("areaForm").style.display="none";
   document.getElementById("opciones").style.display = "block";
   pintarData(data.countries)
- }
+}
 
 
 opcionSeleccionada.addEventListener("change",function(){
@@ -56,10 +56,10 @@ function pintarData (data){
   let contentRootInfo = '';
   for (let i = 0; i < data.length; i++) {
     if (data[i].subregion === 'South America') {
-        const country = data[i];
-        const languages = Object.values(country.languages).join(', ');
+    const country = data[i];
+    const languages = Object.values(country.languages).join(', ');
   
-        contentRootInfo += `<div class="bandera-container">
+    contentRootInfo += `<div class="bandera-container">
             <div class="bandera-wrapper">
                <figure>
                 <img src="${country.flags.png}" class="Bandera" id="bandera-${i}" alt= 
@@ -79,21 +79,21 @@ function pintarData (data){
   }
   root.innerHTML=contentRootInfo;
 
-const banderaImages = document.querySelectorAll('.Bandera');
+  const banderaImages = document.querySelectorAll('.Bandera');
 
-banderaImages.forEach(image => {
-  const container = image.closest('.bandera-container');
-  const infoBack = container.querySelector('.info-back');
+  banderaImages.forEach(image => {
+    const container = image.closest('.bandera-container');
+    const infoBack = container.querySelector('.info-back');
   
-  image.addEventListener('click', function () {
+    image.addEventListener('click', function () {
     container.classList.toggle('show-info');
-    image.classList.toggle('rotate');
-  });
+      image.classList.toggle('rotate');
+    });
 
-  infoBack.addEventListener('click', function () {
-    container.classList.remove('show-info');
-    image.classList.remove('rotate');
-  });
+    infoBack.addEventListener('click', function () {
+      container.classList.remove('show-info');
+      image.classList.remove('rotate');
+});
 });
 }
 pintarData(data.countries)
@@ -134,26 +134,26 @@ limites.addEventListener("change",function(){
 
 // Boton de filtro Idioma 
 
-  const selectIdioma = document.getElementById('idioma');
+const selectIdioma = document.getElementById('idioma');
   selectIdioma.addEventListener("change",function () {
-    const idiomaElegido = selectIdioma.value;
-    const dataFiltradaPorIdioma = filtrarIdioma(data.countries, idiomaElegido);
+      const idiomaElegido = selectIdioma.value;
+      const dataFiltradaPorIdioma = filtrarIdioma(data.countries, idiomaElegido);
    
-    pintarData(dataFiltradaPorIdioma);
-  }) 
+      pintarData(dataFiltradaPorIdioma);
+    }) 
 
 //calcular área entre dos paises
-  const btnCalcular = document.getElementById ('calcular');
-  const resultadoCalcular = document.getElementById ('resultadoCalcular');
-  const closeModalButton = document.getElementById('closeModalButton');
+    const btnCalcular = document.getElementById ('calcular');
+    const resultadoCalcular = document.getElementById ('resultadoCalcular');
+    const closeModalButton = document.getElementById('closeModalButton');
 
- btnCalcular.addEventListener('click',function(){
-    const inpuCalcular1 = document.getElementById('area1').value;
-    const inpuCalcular2 = document.getElementById('area2').value;
-    const sumaArea= calcularArea(data, inpuCalcular1,inpuCalcular2);
+  btnCalcular.addEventListener('click',function(){
+      const inpuCalcular1 = document.getElementById('area1').value;
+      const inpuCalcular2 = document.getElementById('area2').value;
+      const sumaArea= calcularArea(data, inpuCalcular1,inpuCalcular2);
     
-    resultadoCalcular.innerHTML = `<h2>Área Total</h2><p>El área total calculada es: ${sumaArea}</p>`;
-    resultadoCalcular.style.display = 'block';
+      resultadoCalcular.innerHTML = `<h2>Área Total</h2><p>El área total calculada es: ${sumaArea}</p>`;
+      resultadoCalcular.style.display = 'block';
 });
 closeModalButton.addEventListener('click', function() {
   const inputCalcular1 = document.getElementById('area1');

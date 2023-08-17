@@ -1,48 +1,40 @@
-
-
 /* Estilos generales del cuerpo de la página */
 body {
     background-image: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
-        background-color: #f0f0f0;
-      }
-      
-      .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-      }
-      
-      .form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-
-header {
+    margin: 0;
     display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    overflow: hidden;
-  }  
-  h1 {
-    text-align: center;
-  }
-  
-  img {
-    width: 30%; /* Ancho de la imagen */
-    height: auto; /* Altura de la imagen */
-    display: block;
-    margin: 0 auto;
-  }
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
 
-  .image-button {
+/* Estilos para el contenedor de imágenes, botón y logo */
+.container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el contenido en el contenedor */
+    align-items: center;
+    text-align: center; /* Alinea el contenido al centro horizontalmente */
+}
+
+.container img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0; /* Espacio entre las imágenes */
+}
+
+/* Estilos para el botón */
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.image-button {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/769px-Pokebola-pokeball-png-0.png');
     background-size: cover;
     background-position: center;
@@ -50,11 +42,17 @@ header {
     width: 50px;
     height: 50px;
     cursor: pointer;
-    border-radius: 50%; 
-
+    border-radius: 50%;
 }
-
   
+  img {
+    width: 35%; /* Ancho de la imagen */
+    height: auto; /* Altura de la imagen */
+    display: block;
+    margin: 0 auto;
+  }
+
+
 .imagen-button2 {
     background-image: url('https://www.pngall.com/wp-content/uploads/4/Pokemon-Pokeball-Transparent.png');   /* Imagen de fondo del boton */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el boton */
@@ -81,15 +79,15 @@ header {
     background-color:  rgb(230, 230, 231);/* Color de fondo de la tarjeta */
     border-radius: 10px; /* Redondea las esquinas de la tarjeta */
     margin: 20px;/* Margen alrededor de la tarjeta */
-    padding: 5px;/* Espaciado interno a la tarjeta */
-      /* Centra el contenido en el centro horizontal de la tarjeta */
+    padding: 10px;/* Espaciado interno a la tarjeta */
     width: calc(25% - 30px); /* Ancho de cada tarjeta */
 }
 
 
 .card img {
-    width: 150px; /* Establecer un ancho específico */
+    width: 150px;
     height: auto;
+    margin: 10px auto; /* Centra verticalmente la imagen dentro de la tarjeta */
 }
 
 .card h2::first-letter { /* Nombre del pokemon*/
@@ -101,14 +99,14 @@ header {
 .card p1{ 
     text-align: justify;
     margin: 10px 0;
-    font-size: 0.9em;
+    font-size: 1.2em;
     color:black;
 }
 .card p2{ 
     text-transform: capitalize;
     text-align: justify;
     margin: 10px 0;
-    font-size: 0.9em;
+    font-size: 1.2em;
     color:rgb(86, 40, 203);
     background-color: #eff1f5 ;
 }
@@ -116,7 +114,7 @@ header {
     text-transform: capitalize;
     text-align: justify;
     margin: 10px 0;
-    font-size: 0.9em;
+    font-size: 1.2em;
     color:rgb(47, 214, 147);
     background-color: #eff1f5 ;
 }
@@ -124,7 +122,7 @@ header {
     text-transform: capitalize;
     text-align: justify;
     margin: 10px 0;
-    font-size: 0.9em;
+    font-size: 1.2em;
     color:rgb(235, 131, 34);
     background-color: #eff1f5 ;
 }
@@ -132,7 +130,7 @@ header {
     text-transform: capitalize;
     text-align: justify;
     margin: 10px 0;
-    font-size: 0.9em;
+    font-size: 1.2em;
     color:rgb(146, 113, 217);
     background-color: #eff1f5 ;
 }
@@ -140,7 +138,7 @@ header {
     text-transform: capitalize;
     text-align: justify;
     margin: 10px 0;
-    font-size: 0.9em;
+    font-size: 1.2em;
     color: #fbcb04 ;
     background-color: #eff1f5 ;
 }
@@ -148,14 +146,14 @@ header {
     text-transform: capitalize;
     text-align: justify;
     margin: 10px 0;
-    font-size: 0.9em;
+    font-size: 1.2em;
     color:rgb(228, 23, 23);
     background-color: #eff1f5 ;
 }
 
 .card h3 {
     text-align: center;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 .card .additional-info{
@@ -180,6 +178,33 @@ font-size: 25px;
     font-size: 25px;
     font-weight: bold;
 }
+
+
+@media screen and (max-width: 768px) {
+    header img {
+        max-width: 70%; /* Reducir el tamaño del logo en pantallas más pequeñas */
+    }
+    .form {
+        margin-bottom: 10px; /* Espaciado más pequeño en pantallas más pequeñas */
+    }
+    .card {
+        width: calc(50% - 30px); /* Ancho de las tarjetas en pantallas más pequeñas */
+    }
+}
+label, input {
+    margin-top: 10px; /* Espacio entre el select y el label/input */
+    width: 100%; /* Ancho del label y el input */
+    max-width: 300px; /* Ancho máximo para evitar que se vuelvan demasiado anchos */
+    text-align: center; /* Alineación del texto al centro */
+}
+/* ============================================================================================================================================= */
+input{
+    background-color: red;
+}
+label{
+    color:blue;
+}
+/* Estilos para el select */
 select {
     background: rgb(246, 206, 171);
     border: solid;
@@ -188,4 +213,8 @@ select {
     height: auto;
     padding: 5px;
     width: 150px;
+    margin-top: 20px; /* Margen superior para centrar verticalmente */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }

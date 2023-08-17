@@ -68,10 +68,10 @@ function showPokemons(selectedType, nameFilter) {
     }
 }
 
-// Obtiene el elemento select de tipos
-const typeSelect = document.getElementById('type-select');
-// Obtiene el elemento de input de nombre
-const nameInput = document.getElementById('name-input');
+
+const typeSelect = document.getElementById('type-select'); // Obtiene el elemento select de tipos
+
+const nameInput = document.getElementById('name-input'); // Obtiene el elemento de input de nombre
 
 // Agrega un evento para detectar cambios en la selección de tipos
 typeSelect.addEventListener('change', event => {

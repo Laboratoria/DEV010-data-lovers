@@ -1,4 +1,4 @@
-import { filterPokemonsByType, generateQuickMoveNames, generateResistantList, generateWeaknessesList } from './data.js';
+import {filterPokemonsByName, filterPokemonsByType, generateQuickMoveNames, generateResistantList, generateWeaknessesList } from './data.js';
 import pokemonData from './data/pokemon/pokemon.js';
 
 // Obtiene los datos de los pokémones
@@ -16,6 +16,8 @@ function generatePokemonCard(pokemon) {
     const quickMoveNames = generateQuickMoveNames(pokemon['quick-move']);
     const resistantList = generateResistantList(pokemon.resistant);
     const weaknessesList = generateWeaknessesList(pokemon.weaknesses);
+    const filteredPokemons = filterPokemonsByName(pokemons, "Bulbasaur");
+
 
     // Llena la tarjeta con información del Pokémon
     card.innerHTML = `  
@@ -36,19 +38,29 @@ function generatePokemonCard(pokemon) {
     return card;
 }
 
-// Función para mostrar los pokémones según el tipo seleccionado
-function showPokemons(selectedType) {
+function showPokemons(selectedType, nameFilter) {
     pokemonContainer.innerHTML = ''; // Limpia el contenedor antes de agregar tarjetas
 
-    // Si no se selecciona un tipo específico, muestra todos los pokémones
-    if (selectedType === '') {
+    if (selectedType === '' && !nameFilter) {
+        // Mostrar todos los pokémones si no se selecciona un tipo ni se proporciona un filtro de nombre
         for (const pokemon of pokemons) {
             const card = generatePokemonCard(pokemon);
             pokemonContainer.appendChild(card);
         }
     } else {
-        // Filtra y muestra los pokémones según el tipo seleccionado
-        const filteredPokemons = filterPokemonsByType(pokemons, selectedType);
+        let filteredPokemons = pokemons;
+
+        if (selectedType !== '') {
+            // Filtrar por tipo si se selecciona un tipo
+            filteredPokemons = filterPokemonsByType(filteredPokemons, selectedType);
+        }
+
+        if (nameFilter) {
+            // Filtrar por nombre si se proporciona un filtro de nombre
+            filteredPokemons = filterPokemonsByName(filteredPokemons, nameFilter);
+        }
+
+        // Mostrar los pokémones filtrados
         for (const pokemon of filteredPokemons) {
             const card = generatePokemonCard(pokemon);
             pokemonContainer.appendChild(card);
@@ -58,12 +70,23 @@ function showPokemons(selectedType) {
 
 // Obtiene el elemento select de tipos
 const typeSelect = document.getElementById('type-select');
+// Obtiene el elemento de input de nombre
+const nameInput = document.getElementById('name-input');
+
 // Agrega un evento para detectar cambios en la selección de tipos
 typeSelect.addEventListener('change', event => {
     const selectedType = event.target.value;
-    showPokemons(selectedType);
+    const nameFilter = nameInput.value;
+    showPokemons(selectedType, nameFilter);
 });
 
+// Agregar evento para detectar cambios en el campo de nombre
+nameInput.addEventListener('input', () => {
+    const selectedType = typeSelect.value;
+    const nameFilter = nameInput.value;
+    showPokemons(selectedType, nameFilter);
+});
 
 // Mostrar todos los pokémones al cargar la página inicialmente
-showPokemons(''); // Mostrar todos los pokémones al principio
+showPokemons('', ''); // Mostrar todos los pokémones al principio
+

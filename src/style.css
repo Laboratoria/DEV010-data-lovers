@@ -3,14 +3,28 @@
 /* Estilos generales del cuerpo de la página */
 body {
     background-image: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
-    margin: 0; /* Establece márgenes a cero para evitar espacios no deseados */
-    padding: 20px; /* Agrega un espaciado interno a todo el cuerpo */
-    display: flex; /* Usa el modelo de flexbox para organizar elementos en el cuerpo */
-    flex-wrap: wrap;  /* Ajusta la distribución de elementos en filas y columnas */
-    justify-content: center; /* Centra los elementos horizontalmente en el cuerpo */
-    align-items: center;/* Centra los elementos verticalmente en el cuerpo */
-    height: 100vh; /* Altura del cuerpo al 100% del alto de la ventana */
-}
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0f0f0;
+      }
+      
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+      
+      .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
 header {
     display: flex;
     justify-content: center; /* Centra el contenido horizontalmente */

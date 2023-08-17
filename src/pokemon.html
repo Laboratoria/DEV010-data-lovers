@@ -9,14 +9,14 @@
 <body>
     <header>
         <img src="https://1000marcas.net/wp-content/uploads/2020/01/Logo-Pokemon.png" alt="Logo de Pokémon">
-        <div>
-            <form action="index.html">
-                <button id="boton1" class="imagen-button2"></button>
+        <div class="container">
+            <form class="form" action="index.html">
+                <button id="boton1"  name="info" class="imagen-button2"></button>
             </form>
         </div>
     </header>
     <main>
-        <select id="type-select">
+        <select id="type-select"> 
             <option value="">Tipo</option>
             <option value="bug">Bug</option>
             <option value="dark">Dark</option>
@@ -37,7 +37,8 @@
             <option value="steel">Steel</option>
             <option value="water">Water</option>
         </select>
-        
+        <label for="name-input">Filtrar por nombre:</label>
+        <input type="text" id="name-input" placeholder="Escribe el nombre...">
         <div id="pokemon-container" class="card-container"></div>
         <script src="main.js" type="module"></script>
     </main>

@@ -1,9 +1,14 @@
+<<<<<<< Updated upstream
 import { example, filtrarIdioma, ordenar, filtrarPaisesLimitantes, calcularArea } from './data.js'; //aqui se agrego ordenar de AZ para darle funcionalidad al boton desde data.js
 //import { example, filtrarDataLimites} from './data.js';
 
 import data from './data/countries/countries.js';
  
 // Mostrar en Lista desplegable la información
+=======
+import { example } from './data.js';
+import data from './data/countries/countries.js';
+>>>>>>> Stashed changes
 
 const opcionSeleccionada = document.getElementById("opciones");
 const botonInicio = document.getElementById("volver");
@@ -19,6 +24,7 @@ function ocultarContenidos() {
   pintarData(data.countries)
  }
 
+<<<<<<< Updated upstream
 
 opcionSeleccionada.addEventListener("change",function(){
 
@@ -99,6 +105,50 @@ banderaImages.forEach(image => {
 pintarData(data.countries)
 
 // Botton 1 Organizar
+=======
+// me trae de la data nombre y banderas
+const root = document.getElementById('root');
+let contentRoot = '';
+for (let i= 0; i<data.countries.length; i++) {  
+    if(data.countries[i].subregion === "South America") { // selecciono solo sur america
+       contentRoot += `<div class="BanderaContenedor">
+        <img src="${data.countries[i].flags.png}" class="Bandera" 
+        <h4>${data.countries[i].name.common}</h4> 
+       </div>`;   
+    }} // 
+root.innerHTML=contentRoot;
+
+
+// Cambiar el color de los botones automáticamente cada 2 segundos
+const buttons = document.querySelectorAll('anside button'); 
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;}
+function changeButtonColor() {
+  buttons.forEach(button => {
+    const randomColor = getRandomColor();
+    button.style.backgroundColor = randomColor;
+  });}
+setInterval(changeButtonColor, 2000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> Stashed changes
 
 
 const buttonOrdenar = document.getElementById('button1'); // Obtén una referencia al botón de ordenar
@@ -163,5 +213,9 @@ closeModalButton.addEventListener('click', function() {
   inputCalcular2.value = '';
   resultadoCalcular.style.display = 'none'; 
 
+<<<<<<< Updated upstream
 });
     
+=======
+
+>>>>>>> Stashed changes

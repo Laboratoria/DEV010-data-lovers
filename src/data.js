@@ -71,4 +71,3 @@ export const filtrarIdioma = (data, idiomaElegido) =>{
   return dataFiltradaIdioma;
   
 }
-

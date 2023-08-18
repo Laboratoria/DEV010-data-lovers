@@ -1,6 +1,4 @@
 
-
-
 function filterPokemonsByType(pokemons, type) {
   return pokemons.filter(pokemon => pokemon.type.includes(type));
 } // funcion para el primer filtro por tipo de pokemon
@@ -20,13 +18,20 @@ function generateWeaknessesList(weaknessesTypes) {
   return weaknessesTypes.join(', ');
   //extraer debilidad del objeto
 } 
-
+function sortPokemonsByNameAscending(pokemons) {
+  return pokemons.slice().sort((a, b) => a.name.localeCompare(b.name));
+} 
+function sortPokemonsByNameDescending(pokemons) {
+  return pokemons.slice().sort((a, b) => a.name.localeCompare(b.name)).reverse();
+}
 
 export {
   filterPokemonsByName,
   filterPokemonsByType,
   generateQuickMoveNames,
   generateResistantList,
-  generateWeaknessesList
+  generateWeaknessesList,
+  sortPokemonsByNameAscending,
+  sortPokemonsByNameDescending
 };
 

@@ -1,6 +1,6 @@
 # Tarot
 
-El tarot es una baraja de naipes a menudo utilizada como medio de consulta e
+.El tarot es una baraja de naipes a menudo utilizada como medio de consulta e
 interpretación de hechos (presentes, pasados o futuros), sueños, percepciones o
 estados emocionales que constituye, además, un tipo de cartomancia.
 
@@ -11,7 +11,8 @@ baraja de tarot está compuesta por 78 cartas divididas en arcanos mayores, los
 cuales son 22; y menores, que son 56. La palabra _arcano_ proviene del latín
 _arcanum_, que significa 'misterio' o 'secreto'.
 
-A quienes practican este tipo de adivinación se llaman “tarotistas”.
+A quienes practican este tipo de adivinación se llaman “tarotistas”....
+
 
 ## Hallazgos
 
@@ -39,7 +40,7 @@ lo económico).
 
 * En este _dataset_ encontrarás los siguientes datos de cada carta:
 
-  - Tipo: Si es arcano mayor o menor.
+  - Tipo: Si es arcano mayor o menor....
   - Nombre: El nombre de cada una.
   - Nombre corto: Un código identificador de cada una.
   - Valor: Su valor numérico asociado.

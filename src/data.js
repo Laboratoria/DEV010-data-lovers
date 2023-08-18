@@ -4,10 +4,6 @@ export const example = () => {
   return 'example';
 };
 
-export const anotherExample = () => {
-  return 'OMG';
-};
-
 
 
 // Calcula Area entre dos paises

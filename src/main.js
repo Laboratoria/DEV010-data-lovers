@@ -47,10 +47,20 @@ btnBuscar.addEventListener("click", () => {
   rootElement.innerHTML = "";
   if (busquedaInfo) {
     pokemonCards([busquedaInfo]);
-  } else {
-    console.error("El Pokémon que buscaste no está disponible");
   }
+  if (!isNaN(recibeNomNum)){
+    const num = parseInt(recibeNomNum);
+    if(num < 1 || num > 251){
+      alert("Ingresa un número valido del 1 al 251");
+    } else { throw new TypeError("Error");
+      
+    }
+  }
+  
 });
+  
+
+
 //else{ TypeError("El pokemon que buscaste no esta disponible")
   
 //BUSQUEDA POR ELEMENTO
@@ -60,6 +70,7 @@ const tipoDeSeleccion = document.getElementById("types");
 btnType.addEventListener("click", () => {
   //const selectType = "";
   const seleccion = tipoDeSeleccion.value;
+  
   const filtrarPokemon = filtrarPorTipo(data, (pokemon) => {
     return pokemon.type.includes(seleccion);
   });
@@ -76,7 +87,7 @@ btnType.addEventListener("click", () => {
   if(recibeNomNum === "string")
   btnBuscar.addEventListener("click", )*/
 
-  /* const partes = recibeNomNum.split(" ");
+/* const partes = recibeNomNum.split(" ");
   let name = "";
   let num = "";
   if (partes.length === 1) {

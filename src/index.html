@@ -24,8 +24,10 @@
           <button id="btn-buscar">Buscar</button>
         </section>
         <section class="elementos">
-        <label for="elementos">Tipos</label>
+        <!--<label for="types">Elementos</label>-->
         <select name="type" id="types">
+        <optgroup label="Tipos de Pokémon">
+          <option disabled selected hidden>Selecciona un tipo</option>
           <option value="fire">Fuego</option>
           <option value="normal">Normal</option>
           <option value="water">Agua</option>
@@ -44,6 +46,7 @@
           <option value="dragon">Dragon</option>
           <option value="steel">Acero</option>
           <option value="fairy">Hada</option>
+          </optgroup>
         </select>
         <button id="btn-buscarType">Buscar</button>
         </section>

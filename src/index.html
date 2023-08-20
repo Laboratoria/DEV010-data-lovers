@@ -1,94 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers </title>
-    <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Etiqueta para controlar la escala en dispositivos móviles -->
-  </head>
-  <body> 
-    <h1>
-      <img src = "Imagenes/sudamerica.jpg" id="sudamerica">Cultura-travels</h1>
-      
-    <header>
-      
-      <button id="volver" class="button">Inicio</button>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers </title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Etiqueta para controlar la escala en dispositivos móviles -->
+</head>
+
+<body>
+  <h1>
+    <img src="Imagenes/sudamerica.jpg" id="sudamerica">Cultura-travels
+  </h1>
+
+  <header id="botones">
+
+    <button id="volver" class="button">Inicio</button>
+
+    <label class="ordenar1">ordenar:</label>
+    <select id="ordenar" > 
+      <option value="">---</option>
+      <option value="asc">Ordenar de A a Z</option>
+      <option value="dsc">Ordenar de Z a A</option>
+    </select>
+
+    <!--opciones de pantalla principal-->
+    
+    <label class="ordenar1">Filtrar y calcular:</label>
+    <select id="opciones">
+      <option value="">---</option>
+      <option value="limitantes">Limites del pais</option>
+      <option value="idioma">Filtra por idioma</option>
+      <option value="calculo">Calcular area total</option>
+    </select>
 
 
-      <button id="button1" class="button">Ordenar de A a Z</button>
-      <button id="button2" class="button">Ordenar de Z a A</button>
+    <!-- opciones de paises limites-->
+    <select id="limites" class="opciones" style="display: none;">
+      <option value="Seleccione país">Seleccione país</option>
+      <option value="Argentina">Argentina</option>
+      <option value="Bolivia">Bolivia</option>
+      <option value="Brazil">Brazil</option>
+      <option value="Chile">Chile</option>
+      <option value="Colombia">Colombia</option>
+      <option value="Ecuador">Ecuador</option>
+      <option value="Falkland Islands">Falkland Islands</option>
+      <option value="French Guiana">French Guiana</option>
+      <option value="Guyana">Guyana</option>
+      <option value="Paraguay">Paraguay</option>
+      <option value="Peru">Peru</option>
+      <option value="Suriname">Suriname</option>
+      <option value="Uruguay">Uruguay</option>
+      <option value="Venezuela">Venezuela</option>
+    </select>
 
 
-      <!--opciones de pantalla principal-->
-      <select id="opciones">
-        <label for="Seleccione una opcion"> Seleccione una opcion </label>
-        <option value="">Seleccione una opción</option>
-        <option value="limitantes">Limites del pais</option>
-        <option value="idioma">Filtra por idioma</option>
-        <option value="calculo">Calcular area total</option>
-     </select>  
+    <select id="idioma" class="opciones" style="display: none;">
+      <option value="Seleccione idioma">Seleccione idioma</option>
+      <option value="Spanish">Spanish</option>
+      <option value="Guaraní">Guaraní</option>
+      <option value="Quechua">Quechua</option>
+      <option value="Aymara">Aymara</option>
+      <option value="English">English</option>
+      <option value="Portuguese">Portuguese</option>
+      <option value="Dutch">Dutch</option>
+      <option value="French">French</option>
+    </select>
+    </header>
 
-      <!-- opciones de paises limites-->
-     <select id="limites" style="display: none;" >
-        <option value="Seleccione país">Seleccione país</option>
-        <option value="Argentina">Argentina</option>
-        <option value="Bolivia">Bolivia</option>
-        <option value="Brazil">Brazil</option>
-        <option value="Chile">Chile</option>
-        <option value="Colombia">Colombia</option>
-        <option value="Ecuador">Ecuador</option>
-        <option value="Falkland Islands">Falkland Islands</option>
-        <option value="French Guiana">French Guiana</option>
-        <option value="Guyana">Guyana</option>
-        <option value="Paraguay">Paraguay</option>
-        <option value="Peru">Peru</option>
-        <option value="Suriname">Suriname</option>
-        <option value="Uruguay">Uruguay</option>
-        <option value="Venezuela">Venezuela</option>
-      </select>
-      
+    <!--Calcular area total-->
+    <form id="areaForm" style="display: none">
+      <label for="área total" id="area">Calcular área total:</label>
+      <input type="text" id="area1" name="area1" placeholder="Nombre del país">
+      <label for="vs"> vs </label>
+      <input type="text" id="area2" name="area2" placeholder="Nombre de país">
+      <button type="button" id="calcular" class="buttonCalcular">Calcular</button>
+      <button type="button" id="closeModalButton" class="buttonCalcular">volver a calcular</button>
+      <section class="resultadoCalcular" id="resultadoCalcular">
+          <p>El área total calculada es: <span id="areaResultado"></span></p>
 
-      <select id="idioma" style="display: none;">
-        <option value="Seleccione idioma">Seleccione idioma</option>
-        <option value="Spanish">Spanish</option>
-        <option value="Guaraní">Guaraní</option>
-        <option value="Quechua">Quechua</option>
-        <option value="Aymara">Aymara</option>
-        <option value="English">English</option> 
-        <option value="Portuguese">Portuguese</option>
-        <option value="Dutch">Dutch</option>
-        <option value="French">French</option>       
-      </select>
-
-      <!--Calcular area total-->
-      <form id="areaForm" style="display: none"> 
-        <label for="área total">Calcular área total:</label>
-        <input type="text" id="area1" name="area1" placeholder="Nombre del país">
-        <label for="vs">   vs   </label>
-        <input type="text" id="area2" name="area2" placeholder="Nombre de país">
-        <button type="button" id="calcular" class="button">Calcular</button>
-        <button type="button" id="closeModalButton" class="button">volver a calcular</button> 
-        <section class ="resultadoCalcular" id="resultadoCalcular">
-          <section class="calcular2" id="calcular">
-            <h2>Área Total</h2>
-            <p>El área total calculada es: <span id="areaResultado"></span></p>
-            
-          </section>
         </section>
-        
-      </form>
-       
-    </header>  
+      </section>
 
-    
-    <div id="root"><!--principal de html para ser llamado en js-->
-    </div>
+    </form>
 
-    
-        
-    <script src="main.js" type="module"></script>
-    <footer>
+  </header>
+
+
+  <div id="root"><!--principal de html para ser llamado en js-->
+  </div>
+
+
+
+  <script src="main.js" type="module"></script>
+  <footer>
     <p>Desarrollado Por: Diana Matamoros e Ysmari Mendoza</p>
   </footer>
-  </body>
+</body>
+
 </html>

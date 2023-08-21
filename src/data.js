@@ -10,13 +10,12 @@ export const example = () => {
 export const calcularArea = (data, inpuCalcular1, inpuCalcular2) => {
   const pais1 = data.countries.find(pais => pais.name.common === inpuCalcular1); //se busca el pais en la data ingresado
   const pais2 = data.countries.find(pais => pais.name.common === inpuCalcular2);
-
-  if (pais1 !== null && pais2 !== null) {
+  if (pais1 !== undefined && pais2 !== undefined) {
     return pais1.area + pais2.area;
   }
   else if (pais1 === pais2) {
-    return pais1.area
-  }
+    return pais1.area}
+
   else {
     return ('No existe alguno de los paises intente de nuevo')
   }
@@ -24,22 +23,17 @@ export const calcularArea = (data, inpuCalcular1, inpuCalcular2) => {
 
 // Ordenar paises 
 export const ordenar = (banderas, tipo) => {
-  const banderasClonadas = [...banderas]; // Clona las banderas existentes
-  banderasClonadas.sort((a, b) => { //// Ordena las banderas clonadas por nombre de A a Z
-    const nombreA = a.querySelector('h4').textContent;
-    const nombreB = b.querySelector('h4').textContent;
+  banderas.sort((a, b) => { //// Ordena las banderas clonadas por nombre de A a Z
     if (tipo === "asc") {
-      return nombreA.localeCompare(nombreB);
+      return a.name.common.localeCompare(b.name.common);
     }
     else if (tipo === "dsc") {
-      return nombreA.localeCompare(nombreB) * -1;
+      return -a.name.common.localeCompare(b.name.common);
     }
-
   });
-
-  return banderasClonadas;
-
+  return banderas
 };
+
 
 // Data por Limites 
 export const filtrarPaisesLimitantes = (data, paisElegido) => {

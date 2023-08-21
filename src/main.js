@@ -16,6 +16,7 @@ function ocultarContenidos() {
   document.getElementById("limites").style.display = "none";
   document.getElementById("areaForm").style.display = "none";
   document.getElementById("opciones").style.display = "block";
+  document.getElementById("ordenar").style.display = "block";
   pintarData(data.countries)
 }
 
@@ -114,14 +115,11 @@ pintarData(data.countries)
 // Organizar
 
 const selectOrden = document.getElementById('ordenar'); // Obtén una referencia al botón de ordenar
-selectOrden.addEventListener('change', () => { // Agrega un evento de clic al botón
+selectOrden.addEventListener('change', function () { // Agrega un evento de clic al botón
   const ordenElegido = selectOrden.value;
-
-  const banderasOrdenadas = ordenar(root.querySelectorAll('.bandera-container'), ordenElegido); // Llama a la función ordenarAZ para ordenar las banderas de A a Z
-  root.innerHTML = '';// Elimina las banderas originales
-  banderasOrdenadas.forEach(bandera => { // Agrega las banderas ordenadas al root nuevamente
-    root.appendChild(bandera);
-  });
+  const bandOrdenadas = ordenar(data.countries, ordenElegido)
+  
+  pintarData(bandOrdenadas);
 });
 
 

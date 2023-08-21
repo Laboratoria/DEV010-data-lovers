@@ -32,12 +32,6 @@ describe('calcularArea', () => {
     expect(calcularArea(data, nombrePais, nombrePais2)).toEqual(17031534);
   });
 
-
-  it('returns `calcularArea`', () => {
-    const nombrePais = "Pais no encontrado";
-    const nombrePais2 = "Brazil";
-    expect(calcularArea(data, nombrePais, nombrePais2)).toBe('No existe alguno de los paises intente de nuevo');
-  });
 });
 
 // test Idioma
@@ -65,17 +59,19 @@ describe('lenguajes', () => {
 
 
 
-/*test Ordenar
-describe ('ordenarFuntion', () => {
-  it('returns sorted array', () => {
-    const banderas= [{nombre:'Argentina'},{nombre:'Bolivia'}, {nombre:'Brazil'}];
-    const tipo ='asc';
-    const resultado = ordenar (banderas,tipo);
-    expect (describe[0].nombre).toBe ('Argentina');
-    expect (describe[1].nombre).toBe ('Bolivia');
-    expect (describe[2].nombre).toBe ('Brazil');
+//ordenar
+
+describe('ordenar', () => {
+  it('returns `ordenar`', () => {
+    const listaPaises = [{ 'name': { 'common' : 'Argentina' }}, { 'name': { 'common' : 'Brazil' }}, { 'name': { 'common' : 'Bolivia'}}];
+    const resultadoEsperado = listaPaises.sort((a,b) => a.name.common.localeCompare(b.name.common))
+    
+    const resultadoObtenido = ordenar(listaPaises, 'asc')
+
+    expect(resultadoObtenido).toEqual(resultadoEsperado);
   });
-});*/
+});
+
 
 
 

@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <!--Instalando fuentes-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
     <div id="root"></div>
+    <img class="banner" src="data/imagenes/logoGame.jpg" alt="">
+  </header>
+  <nav id="navigator">
+    <ul>
+      <li id="search"><input class="search" name="searchCharacter" placeholder="Character">
+      </li>
+            <li id="familySelector">
+               <select id= "house" name="Family">
+                    <option value="" selected disabled>Filter by house</option>
+                    <option value="Baelish">Baelish</option>
+                    <option value="Baratheon">Baratheon</option>
+                    <option value="Bolton">Bolton</option>
+                    <option value="Clegane">Clegane</option>
+                    <option value="Greyjoy">Greyjoy</option>
+                    <option value="Lannister">Lannister</option>
+                    <option value="Martell">Martell</option>
+                    <option value="Mormont">Mormont</option>
+                    <option value="Stark">Stark</option>
+                    <option value="Seaworth">Seaworth</option>
+                    <option value="Targaryen">Targaryen</option>
+                    <option value="Tarly">Tarly</option>
+                    <option value="Tarth">Tarth</option>
+                    <option value="Tyrell">Tyrell</option>
+                    <option value="" >---others--</option>
+                    <option value="Free Folk">Free Folk</option>
+                    <option value="freedmen">Freedmen</option>
+                    <option value="King's council">King's council</option>
+                    <option value="Sorcerers">Sorcerers</option>
+                </select>
+            </li>
+            <li>
+              <select class="order" name="Order">
+                <option value="" selected disabled>Order by...</option>
+                <option value="Ascendente">Alphabetically A-Z</option>
+                <option value="Descendente">Alphabetically Z-A</option>
+                <!--<option value="Born">Born date</option>
+                <option value="Death">Death date</option>-->
+              </select>
+            </li>
+        </ul>
+    </nav>
+    <main class="principal">
+      <section id="phrase" >
+        <h1 class="words">“When you play the game of thrones, you win or you die. There is no middle ground.”</h1>
+        <h3 class="autor">― George R.R. Martin, A Game of Thrones</h3>
+      </section>
+      <section id="characters" class="card">
+      </section>
+      <section id="pages">
+        <a href="#" class="previous">&#8249;</a> <!--botones para la paginacion-->
+        <a href="#" class="next">&#8250;</a>
+      </section>
+      <section id="counter">
+        <!-- <h2>Game of Thrones survivors:<span id="survivors"></span></h2> -->
+        <h2>Game of Thrones survivors:</h2>
+        <span id="survivors"></span>
+
+      </section>
+    </main>
+    <aside class="homeland">
+      <section id="container">
+        <article id="shield"><img src="data/imagenes/stark.jpg" width="200px" height="200px"></article>
+        <article id="history">House Stark of Winterfell is one of the Great Houses of Westeros and the principal noble house of the north. In days of old they ruled as Kings of Winter, but since Aegon's Conquest they have been Wardens of the North and ruled as Lords of Winterfell. Their seat, Winterfell, is an ancient castle renowned for its strength.</article>
+    </section>
+    </aside>
+    <footer>
+      <p>Made by fans, for Game of Thrones fans. Under "Fair Use" for being made for educational purposes. <br> All rights to the images used for this purpose belong to their authors.</p>
+    </footer>
     <script src="main.js" type="module"></script>
+    <script src="./data/got/motto.js" type="module"></script>
   </body>
 </html>

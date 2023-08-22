@@ -1,0 +1,256 @@
+/*Header*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Courgette', cursive;
+}
+
+header{
+
+  width: 100%;
+  height: 300px;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  display: flex;
+
+}
+
+.banner {
+  width: 30%;
+  padding: 0rem;
+  margin: 0rem;
+}
+
+p {
+  text-align: center;
+}
+
+/*Navegador*/
+
+nav {
+  background-color: black;
+  padding-top:1rem;
+  padding-bottom: 1rem;
+  padding-right: 12rem ;
+}
+
+#navigator ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: right;
+}
+
+#navigator li {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+/*MAIN*/
+
+main {
+  width: 100%;
+  background-color: rgb(236, 176, 133);
+  background-image: url(data/imagenes/westeros.jpg);
+  background-size: cover;
+  background-blend-mode: soft-light;
+}
+
+#phrase {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0rem;
+}
+
+h3 {
+  margin-top: 0rem;
+  padding-top: 0rem;
+  text-align: right;
+  margin-right: 10%;
+}
+
+#characters {  
+  display: flex;
+  flex-wrap: wrap;
+  }
+  
+  #pages {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .card {
+
+    display: flex;
+    padding: 20px;
+    border: #111010;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    max-width: 50%;
+    margin-left: 23%;
+  
+  }
+  .flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 200px;
+    border: 2px solid #f1f1f1;
+    /*perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #201e1e;
+    text-align: center;
+  
+}
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: rgb(33, 33, 34);
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  figure {
+    border: thin #111010 solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    max-width: 220px;
+    margin: 10px;
+  }
+  
+  .imagen {
+    width: 220px;
+    height: 150px;
+    object-fit: fill ;
+  }
+
+  figcaption {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+  }
+
+h2 {
+  text-align: center;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+#counter {
+  padding: 1rem;
+  text-align: center;
+}
+
+/*HIDDEN SECTION*/
+
+aside {
+  background-color: black;
+  color: rgb(253, 254, 254);
+  max-height: 200px;
+  min-height: 200px;
+  font-size: 1.3rem;
+}
+
+#container {
+  margin-left: 15%;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#shield {
+  width: 30%;
+  height: 200px;
+  padding: 0rem;
+}
+
+h4 {
+  text-justify: distribute-all-lines;
+}
+
+/*.homeland {
+  display:none;
+}*/
+
+#history {
+  width: 60%;
+  padding: 1rem;
+  padding-left: 0rem;
+  margin: 0rem;
+}
+
+footer {
+  padding-top: 1rem;
+}
+
+
+
+/*Otros que no se donde van*/
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 16px;
+}
+
+a:hover {
+  background-color: #1d1b1b;
+  color: black;
+}
+
+
+.round {
+  border-radius: 50%;
+}

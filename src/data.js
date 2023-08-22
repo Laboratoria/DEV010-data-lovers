@@ -31,6 +31,7 @@ export const ordenar = (banderas, tipo) => {
       return -a.name.common.localeCompare(b.name.common);
     }
   });
+
   return banderas
 };
 
@@ -39,6 +40,7 @@ export const ordenar = (banderas, tipo) => {
 export const filtrarPaisesLimitantes = (data, paisElegido) => {
   const paisesLimitantes = [];
   const pais = data.countries.find(pais => pais.name.common === paisElegido); // Buscamos el país que el usuario eligió
+
   if (pais) { // Si encontramos el país, buscamos sus países vecinos
     pais.borders.forEach(border => {
       const paisVecino = data.countries.find(pais => pais.fifa === border);
@@ -63,4 +65,4 @@ export const filtrarIdioma = (data, idiomaElegido) => {
   }
   return dataFiltradaIdioma;
 
-}
+

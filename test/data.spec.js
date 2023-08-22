@@ -18,6 +18,7 @@ describe('example', () => {
 
 //----------------------------------
 //Test Calcular Area
+
 describe('calcularArea', () => {
   it('returns `calcularArea`', () => {
     const nombrePais = "Colombia";
@@ -75,11 +76,14 @@ describe('ordenar', () => {
 
 
 
+
 // test Limites
 
 describe('filtrarPaisesLimitantes', () => {
   it('devuelve una lista de países limitantes válida', () => {
+
     const paisElegido = 'Colombia';
+
     const paisesLimitantes = filtrarPaisesLimitantes(data, paisElegido);
     expect(Array.isArray(paisesLimitantes)).toBe(true);
   });

@@ -6,15 +6,14 @@ import {
   generateWeaknessesList,
   sortPokemonsByNameAscending,
   sortPokemonsByNameDescending,
+  sortPokemonsByNumberAscending,
+  
 } from "./data.js";
 
 import pokemonData from "./data/pokemon/pokemon.js";
 
 // Obtiene los datos de los pokémones
 const pokemons = pokemonData.pokemon;
-
-// Obtiene el contenedor donde se mostrarán las tarjetas
-const pokemonContainer = document.getElementById("pokemon-container");
 
 // Genera una tarjeta HTML para un Pokémon dado
 function generatePokemonCard(pokemon) {
@@ -46,47 +45,51 @@ function generatePokemonCard(pokemon) {
   return card;
 }
 
-function showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2) {
+function showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2, sortedPokemonsByNumber) {
+  const pokemonContainer = document.getElementById("pokemon-container");
   pokemonContainer.innerHTML = ""; // Limpia el contenedor antes de agregar tarjetas
   
-  if (selectedType === "" && !nameFilter && !sortedPokemons && !sortedPokemons2) {
-    // Mostrar todos los pokémones si no se selecciona un tipo ni se proporciona un filtro de nombre
-    for (const pokemon of pokemons) {
-      const card = generatePokemonCard(pokemon);
-      pokemonContainer.appendChild(card);
-    }
-  } else {
-    let filteredPokemons = pokemons;
+  let filteredPokemons = [...pokemons]; // Crear una copia de pokemons para no modificar la lista original
+
+  if (nameFilter) {
+    // Filtrar por nombre si se proporciona un filtro de nombre
+    filteredPokemons = filterPokemonsByName(filteredPokemons, nameFilter);
+  }
   
-    if (selectedType !== "") {
-      // Filtrar por tipo si se selecciona un tipo
-      filteredPokemons = filterPokemonsByType(filteredPokemons, selectedType);
-    }
+  if (selectedType !== "") {
+    // Filtrar por tipo si se selecciona un tipo
+    filteredPokemons = filterPokemonsByType(filteredPokemons, selectedType);
+  }
+
+  if (sortedPokemons) {
+    // Ordenar por nombre ascendente si el botón de orden ascendente está activo
+    filteredPokemons = sortPokemonsByNameAscending(filteredPokemons);
+  }
+
+  if (sortedPokemons2) {
+    // Ordenar por nombre descendente si el botón de orden descendente está activo
+    filteredPokemons = sortPokemonsByNameDescending(filteredPokemons);
+  }
   
-    if (nameFilter) {
-      // Filtrar por nombre si se proporciona un filtro de nombre
-      filteredPokemons = filterPokemonsByName(filteredPokemons, nameFilter);
-    }
-    
-    if (sortedPokemons) {
-      filteredPokemons = sortPokemonsByNameAscending(filteredPokemons);
-    }
-    
-    if (sortedPokemons2) {
-      filteredPokemons = sortPokemonsByNameDescending(filteredPokemons);
-    }
-  
-    // Mostrar los pokémones filtrados
-    for (const pokemon of filteredPokemons) {
-      const card = generatePokemonCard(pokemon);
-      pokemonContainer.appendChild(card);
-    }
+  if (sortedPokemonsByNumber) {
+    // Ordenar por número ascendente si el botón de orden ascendente por número está activo
+    filteredPokemons = sortPokemonsByNumberAscending(filteredPokemons);
+  }
+
+  // Mostrar los pokémones filtrados y ordenados
+  for (const pokemon of filteredPokemons) {
+    const card = generatePokemonCard(pokemon);
+    pokemonContainer.appendChild(card);
   }
 }
+
+
 const typeSelect = document.getElementById("type-select");
 const nameInput = document.getElementById("name-input");
 const ascendButton = document.getElementById("ascend-button");
 const descendButton = document.getElementById("descend-button");
+const ascendNumberButton = document.getElementById("ascend-number-button");
+
 
 // Agrega un evento para detectar cambios en la selección de tipos
 typeSelect.addEventListener("change", (event) => {
@@ -102,10 +105,11 @@ typeSelect.addEventListener("change", (event) => {
 nameInput.addEventListener("input", () => {
   const selectedType = typeSelect.value;
   const nameFilter = nameInput.value;
-  const sortedPokemons = sortPokemonsByNameAscending(pokemons);
-  const sortedPokemons2 = sortPokemonsByNameDescending(pokemons);
-  showPokemons(selectedType, nameFilter,sortedPokemons, sortedPokemons2);
-});  
+  const sortedPokemons = ascendButton.classList.contains("active"); // Verificar si el botón de orden ascendente está activo
+  const sortedPokemons2 = descendButton.classList.contains("active"); // Verificar si el botón de orden descendente está activo
+  showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2);
+});
+
 // Agregar evento para el botón "Ascendente"
 ascendButton.addEventListener("click", () => {
   const selectedType = typeSelect.value;
@@ -113,6 +117,8 @@ ascendButton.addEventListener("click", () => {
   const sortedPokemons = true; // Establecer orden ascendente
   const sortedPokemons2 = false; // Establecer orden descendente a falso
   showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2);
+  ascendButton.classList.add("active"); // Marcar el botón como activo
+  descendButton.classList.remove("active"); // Desactivar el botón descendente
 });
 
 // Agregar evento para el botón "Descendente"
@@ -122,7 +128,21 @@ descendButton.addEventListener("click", () => {
   const sortedPokemons = false; // Establecer orden ascendente a falso
   const sortedPokemons2 = true; // Establecer orden descendente
   showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2);
+  descendButton.classList.add("active"); // Marcar el botón como activo
+  ascendButton.classList.remove("active"); // Desactivar el botón ascendente
+});
+// Agregar evento para el botón "Ascendente" por número
+ascendNumberButton.addEventListener("click", () => {
+  const selectedType = typeSelect.value;
+  const nameFilter = nameInput.value;
+  const sortedPokemons = false; // Establecer orden ascendente por nombre a falso
+  const sortedPokemons2 = false; // Establecer orden descendente por nombre a falso
+  const sortedPokemonsByNumber = true; // Establecer orden ascendente por número
+  showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2, sortedPokemonsByNumber);
+  ascendButton.classList.remove("active"); // Desactivar el botón ascendente por nombre
+  descendButton.classList.remove("active"); // Desactivar el botón descendente por nombre
+  ascendNumberButton.classList.add("active"); // Marcar el botón ascendente por número como activo
 });
 
 // Mostrar todos los pokémones al cargar la página inicialmente
-showPokemons("", ""); // Mostrar todos los pokémones al principio
+showPokemons("", "", false, false); // Mostrar todos los pokémones al principio

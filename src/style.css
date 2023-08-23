@@ -80,7 +80,11 @@ body {
     border-radius: 10px; /* Redondea las esquinas de la tarjeta */
     margin: 20px;/* Margen alrededor de la tarjeta */
     padding: 10px;/* Espaciado interno a la tarjeta */
-    width: calc(25% - 30px); /* Ancho de cada tarjeta */
+    width: 220px; /* Ancho de cada tarjeta */
+    background-color: #eff1f5 ;
+    font-family: ADLaM Display;
+
+
 }
 
 
@@ -101,54 +105,52 @@ body {
     margin: 10px 0;
     font-size: 1.2em;
     color:black;
+    background-color: #eff1f5 ;
 }
 .card p2{ 
     text-transform: capitalize;
     text-align: justify;
     margin: 10px 0;
     font-size: 1.2em;
-    color:rgb(86, 40, 203);
-    background-color: #eff1f5 ;
+    
+   
 }
 .card p3{ 
     text-transform: capitalize;
     text-align: justify;
     margin: 10px 0;
     font-size: 1.2em;
-    color:rgb(47, 214, 147);
-    background-color: #eff1f5 ;
+  
+    
 }
 .card p4{ 
     text-transform: capitalize;
     text-align: justify;
     margin: 10px 0;
     font-size: 1.2em;
-    color:rgb(235, 131, 34);
-    background-color: #eff1f5 ;
+   
 }
 .card p5{ 
     text-transform: capitalize;
     text-align: justify;
     margin: 10px 0;
     font-size: 1.2em;
-    color:rgb(146, 113, 217);
-    background-color: #eff1f5 ;
+  
 }
 .card p6{ 
     text-transform: capitalize;
     text-align: justify;
     margin: 10px 0;
     font-size: 1.2em;
-    color: #fbcb04 ;
-    background-color: #eff1f5 ;
+   
 }
 .card p7{ 
     text-transform: capitalize;
     text-align: justify;
     margin: 10px 0;
     font-size: 1.2em;
-    color:rgb(228, 23, 23);
-    background-color: #eff1f5 ;
+  
+    
 }
 
 .card h3 {
@@ -191,19 +193,18 @@ font-size: 25px;
         width: calc(50% - 30px); /* Ancho de las tarjetas en pantallas más pequeñas */
     }
 }
-label, input {
-    margin-top: 10px; /* Espacio entre el select y el label/input */
-    width: 100%; /* Ancho del label y el input */
-    max-width: 300px; /* Ancho máximo para evitar que se vuelvan demasiado anchos */
-    text-align: center; /* Alineación del texto al centro */
-}
+
 /* ============================================================================================================================================= */
-input{
+input {
+    box-sizing: border-box;
+    width: 200px; /* Ancho del input al 100% del contenedor */
+    max-width: 300px; /* Ancho máximo para evitar que sea demasiado ancho */
     padding: 3px 10px;
-  border: PowderBlue 5px solid;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
+    border: PowderBlue 5px solid;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  
 
 label{
     color:rgb(17, 4, 87); 
@@ -214,7 +215,7 @@ label{
 select {
     background: rgb(226, 220, 214);
     border: white 10px groove;
-    border-color: #cec8c2;
+    border-color: PowderBlue;
     font-size: 14px; 
     height: auto;
     padding: 5px;

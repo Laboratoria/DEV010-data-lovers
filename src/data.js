@@ -24,6 +24,9 @@ function sortPokemonsByNameAscending(pokemons) {
 function sortPokemonsByNameDescending(pokemons) {
   return pokemons.slice().sort((a, b) => a.name.localeCompare(b.name)).reverse();
 }
+function sortPokemonsByNumberAscending(pokemons) {
+  return pokemons.slice().sort((a, b) => parseInt(a.num) - parseInt(b.num));
+}
 
 export {
   filterPokemonsByName,
@@ -32,6 +35,7 @@ export {
   generateResistantList,
   generateWeaknessesList,
   sortPokemonsByNameAscending,
-  sortPokemonsByNameDescending
+  sortPokemonsByNameDescending,
+  sortPokemonsByNumberAscending
 };
 

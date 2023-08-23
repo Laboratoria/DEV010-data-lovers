@@ -14,7 +14,7 @@
         </form>
     <main>
         <select id="type-select"> 
-            <option value="">Tipo</option>
+            <option value="">Type</option>
             <option value="bug">Bug</option>
             <option value="dark">Dark</option>
             <option value="dragon">Dragon</option>
@@ -34,12 +34,14 @@
             <option value="steel">Steel</option>
             <option value="water">Water</option>
         </select>
-        <label for="name-input">Filtrar por nombre:</label>
-        <input type="text" id="name-input" placeholder="Escribe el nombre...">
-        <button id="ascend-button">A - Z</button>
-        <button id="descend-button">Z - A</button>
-        <div id="pokemon-container" class="card-container"></div>
-        </div>
+        <div class="filter-container">
+            <label for="name-input">Name:</label>
+            <input type="text" id="name-input" placeholder="Enter the name...">
+            <button id="ascend-button">A - Z</button>
+            <button id="descend-button">Z - A</button>
+            <button id="ascend-number-button">1 - 251</button> 
+          </div>
+          <div id="pokemon-container" class="card-container"></div>
         <script src="main.js" type="module"></script>
     </main>
 </body>

@@ -32,8 +32,6 @@ describe('busquedaNomNum', () => {
     expect(result).toBeTruthy(); // Realizando la afirmación de la prueba
   });
   
-
-
   describe('filtrarPorTipo', () => {
     it('is a function', () => {
       expect(typeof filtrarPorTipo).toBe('function');

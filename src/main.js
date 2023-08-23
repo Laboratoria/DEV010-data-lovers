@@ -1,6 +1,6 @@
 
 import data from './data/pokemon/pokemon.js';
-import {busquedaNomNum, filtrarPorTipo} from './data.js';
+import {busquedaNomNum, filtrarPorTipo, sortData} from './data.js';
 
 
 
@@ -27,14 +27,63 @@ function pokemonCards(pokemonArray){
     pokemonNumber.textContent = `#${pokemonInfo.num}`;
     pokemonCard.appendChild(pokemonNumber);
     
+    pokemonCard.addEventListener('click', async () => { //asincrónica con await
+      const pokemonDetails = await busquedaNomNum(data, pokemonInfo.num);
+      cardDetalladas(pokemonDetails);
+    });
+
     rootElement.appendChild(pokemonCard);
-    console.log(pokemonCard);
+    
   });
 }
 //document.addEventListener('DOMContentLoaded', pokemonCards);
 document.addEventListener('DOMContentLoaded', () => {
   pokemonCards(data.pokemon);
 });
+/*function cardDetalladas(pokemonInfo){
+
+  const modal = document.createElement("div");
+  modal.classList.add('pokemon-modal');
+
+  const contenidoModal = `
+      <h2>${pokemonInfo.name}</h2>
+      <p>Número: ${pokemonInfo.num}</p>
+      <p>Tipo: ${pokemonInfo.type.join(', ')}</p>
+      <p>Descripción: ${pokemonInfo.about}</p>
+      <p>
+    `;
+  const ventanaEmerge = window.open('', '_blank', 'width=300,height=300');//una nueva ventana,se abre en una pestaña.
+  ventanaEmerge.document.write(`<html><body>${contenidoModal}</body></html>`);
+  ventanaEmerge.document.close();
+}*/
+
+function cardDetalladas(pokemonInfo) {
+  const modal = document.getElementById('modal');
+  const modalName = document.getElementById('modal-pokemon-name');
+  const modalDetails = document.getElementById('modal-pokemon-details');
+
+  modalName.textContent = pokemonInfo.name;
+  modalDetails.innerHTML = `<strong>Number:</strong> ${pokemonInfo.num}<br><strong>Type:</strong> ${pokemonInfo.type.join(',')}<br><strong>Description:</strong> ${pokemonInfo.about} 
+    `;
+
+
+  modal.style.display = 'block';
+
+  const closeModalButton = document.querySelector('.close-modal');
+  closeModalButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+
+  }); 
+  
+  
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  pokemonCards(data.pokemon);
+}); 
+
+
 // BUSQUEDA POR NOMBRE O NUMERO 
 const inputElement = document.getElementById("input");
 const btnBuscar = document.getElementById("btn-buscar");
@@ -78,26 +127,18 @@ btnType.addEventListener("click", () => {
   pokemonCards(filtrarPokemon);
 });
 
+const btnOrdenarNombre = document.getElementById('btn-ordenar-nombre');
+btnOrdenarNombre.addEventListener('click', () => {
+  const pokemonOrdenados = sortData(data, 'name', 'asc');
+  rootElement.innerHTML = '';
+  pokemonCards(pokemonOrdenados);
+});
 
-/*const inputElement = document.getElementById("input");
-  const btnBuscar = document.getElementById("btn-buscar");
+const btnOrdenarNumero = document.getElementById('btn-ordenar-numero');
+btnOrdenarNumero.addEventListener('click', () => {
+  const pokemonesOrdenados = sortData(data, 'num', 'asc',);
+  rootElement.innerHTML = '';
+  pokemonCards(pokemonesOrdenados);
+});
 
-  const recibeNomNum = inputElement.value;
 
-  if(recibeNomNum === "string")
-  btnBuscar.addEventListener("click", )*/
-
-/* const partes = recibeNomNum.split(" ");
-  let name = "";
-  let num = "";
-  if (partes.length === 1) {
-    name = partes[0];
-  }
-  else if (partes.length === 2){
-    num = partes[0];
-    name = partes[1];
-  }
-  else {
-    console.error("Formato incorrecto. Ingresa nombre o número de Pokémon.");
-    return;
-  }*/

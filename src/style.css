@@ -199,17 +199,23 @@ label, input {
 }
 /* ============================================================================================================================================= */
 input{
-    background-color: red;
+    padding: 3px 10px;
+  border: PowderBlue 5px solid;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
+
 label{
-    color:blue;
+    color:rgb(17, 4, 87); 
+    font-family: Broadway;
+    
 }
 /* Estilos para el select */
 select {
-    background: rgb(246, 206, 171);
-    border: solid;
-    border-color: rgb(227, 124, 34);
-    font-size: 14px;
+    background: rgb(226, 220, 214);
+    border: white 10px groove;
+    border-color: #cec8c2;
+    font-size: 14px; 
     height: auto;
     padding: 5px;
     width: 150px;
@@ -217,4 +223,14 @@ select {
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+button{
+    color:rgb(17, 4, 87);
+    padding: 3px 10px;
+    border: PowderBlue 5px solid;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: white;
+    font-size: 17px; 
+    font-family: Broadway
 }

@@ -83,10 +83,7 @@ body {
     width: 220px; /* Ancho de cada tarjeta */
     background-color: #eff1f5 ;
     font-family: ADLaM Display;
-
-
 }
-
 
 .card img {
     width: 150px;
@@ -148,9 +145,13 @@ body {
     text-transform: capitalize;
     text-align: justify;
     margin: 10px 0;
-    font-size: 1.2em;
-  
-    
+    font-size: 1.2em;  
+}
+.card p8{ 
+    text-transform: capitalize;
+    text-align: justify;
+    margin: 10px 0;
+    font-size: 1.2em;  
 }
 
 .card h3 {
@@ -194,7 +195,6 @@ font-size: 25px;
     }
 }
 
-/* ============================================================================================================================================= */
 input {
     box-sizing: border-box;
     width: 200px; /* Ancho del input al 100% del contenedor */
@@ -205,7 +205,6 @@ input {
     border-bottom-right-radius: 20px;
   }
   
-
 label{
     color:rgb(17, 4, 87); 
     font-family: Broadway;
@@ -235,3 +234,20 @@ button{
     font-size: 17px; 
     font-family: Broadway
 }
+#average-attack {
+    color:rgb(17, 4, 87);
+    padding: 3px 5px;
+    border: PowderBlue 5px solid;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: white;
+    font-size: 17px; 
+    font-family: Broadway;
+    max-width: 200px;
+    margin: 0 auto;
+}
+.filter-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    gap: 10px; /* Espacio entre los elementos */
+  }

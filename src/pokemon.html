@@ -13,6 +13,7 @@
             <button id="boton1"  name="info" class="imagen-button2"></button>
         </form>
     <main>
+        <div class="filter-container">
         <select id="type-select"> 
             <option value="">Type</option>
             <option value="bug">Bug</option>
@@ -34,12 +35,12 @@
             <option value="steel">Steel</option>
             <option value="water">Water</option>
         </select>
-        <div class="filter-container">
             <label for="name-input">Name:</label>
             <input type="text" id="name-input" placeholder="Enter the name...">
             <button id="ascend-button">A - Z</button>
             <button id="descend-button">Z - A</button>
             <button id="ascend-number-button">1 - 251</button> 
+            <p id="average-attack"> Average Attack: </p>
           </div>
           <div id="pokemon-container" class="card-container"></div>
         <script src="main.js" type="module"></script>

@@ -7,6 +7,7 @@ import {
   sortPokemonsByNameAscending,
   sortPokemonsByNameDescending,
   sortPokemonsByNumberAscending,
+  calculateAverageAttack,
   
 } from "./data.js";
 
@@ -39,6 +40,8 @@ function generatePokemonCard(pokemon) {
             <p5>Quick move: ${quickMoveNames}</p5><br><br>
             <p6>Resistant: ${resistantList}</p6><br><br>
             <p7>Weaknesses: ${weaknessesList}</p7><br><br>
+            <p8>Attack: ${pokemon.stats["base-attack"]}</p8><br><br>
+            <p8>Defense: ${pokemon.stats["base-defense"]}</p8>
             </div>
         `;
   
@@ -47,6 +50,7 @@ function generatePokemonCard(pokemon) {
 
 function showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2, sortedPokemonsByNumber) {
   const pokemonContainer = document.getElementById("pokemon-container");
+  const averageAttackElement = document.getElementById("average-attack"); // Nuevo elemento para mostrar el promedio
   pokemonContainer.innerHTML = ""; // Limpia el contenedor antes de agregar tarjetas
   
   let filteredPokemons = [...pokemons]; // Crear una copia de pokemons para no modificar la lista original
@@ -59,6 +63,12 @@ function showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2,
   if (selectedType !== "") {
     // Filtrar por tipo si se selecciona un tipo
     filteredPokemons = filterPokemonsByType(filteredPokemons, selectedType);
+
+    // Calcular el promedio de ataque de los pokémones filtrados por tipo
+    const averageAttack = calculateAverageAttack(filteredPokemons);
+    averageAttackElement.textContent = `Average Attack: ${averageAttack.toFixed(2)}`;
+  } else {
+    averageAttackElement.textContent = ""; // Limpiar el texto si no hay tipo seleccionado
   }
 
   if (sortedPokemons) {

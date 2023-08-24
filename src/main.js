@@ -56,7 +56,7 @@ function showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2,
   let filteredPokemons = [...pokemons]; // Crear una copia de pokemons para no modificar la lista original
 
   if (nameFilter) {
-    // Filtrar por nombre si se proporciona un filtro de nombre
+    // Filtrar por nombre si se escribe 
     filteredPokemons = filterPokemonsByName(filteredPokemons, nameFilter);
   }
   
@@ -92,7 +92,6 @@ function showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2,
     pokemonContainer.appendChild(card);
   }
 }
-
 
 const typeSelect = document.getElementById("type-select");
 const nameInput = document.getElementById("name-input");

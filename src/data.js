@@ -28,9 +28,6 @@ function sortPokemonsByNumberAscending(pokemons) {
   return pokemons.slice().sort((a, b) => parseInt(a.num) - parseInt(b.num));
 }
 function calculateAverageAttack(pokemons) {
-  if (pokemons.length === 0) {
-    return 0; // Si no hay pokémones, el promedio es 0
-  }
   const totalAttack = pokemons.reduce((sum, pokemon) => sum + parseInt(pokemon.stats["base-attack"]), 0);
   return totalAttack / pokemons.length;
 }

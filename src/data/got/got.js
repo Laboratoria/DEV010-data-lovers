@@ -5,7 +5,7 @@ export default{
       "firstName": "Daenerys",
       "lastName": "Targaryen",
       "fullName": "Daenerys Targaryen",
-      "title": "Mother of Dragons",
+      "title": "Queen of Meereen, Khaleesi of Great Grass Sea, Breaker of Shackles, and Mother of Dragons",
       "family": "House Targaryen",
       "imageUrl": "https://thronesapi.com/assets/images/daenerys.jpg",
       "born": "284 DC"
@@ -25,7 +25,7 @@ export default{
       "firstName": "Jon",
       "lastName": "Snow",
       "fullName": "Jon Snow",
-      "title": "King of the North",
+      "title": "King of the North and Lord Commander of the Knight's Watch",
       "family": "House Stark",
       "imageUrl": "https://thronesapi.com/assets/images/jon-snow.jpg",
       "born": "283 DC"
@@ -45,7 +45,7 @@ export default{
       "firstName": "Sansa",
       "lastName": "Stark",
       "fullName": "Sansa Stark",
-      "title": "Lady of Winterfell",
+      "title": "Queen of the North Kingdom",
       "family": "House Stark",
       "imageUrl": "https://thronesapi.com/assets/images/sansa-stark.jpeg",
       "born": "286 AL"
@@ -55,7 +55,7 @@ export default{
       "firstName": "Brandon",
       "lastName": "Stark",
       "fullName": "Brandon Stark",
-      "title": "Lord of Winterfell",
+      "title": "King of the Six Kingdoms",
       "family": "House Stark",
       "imageUrl": "https://thronesapi.com/assets/images/bran-stark.jpg",
       "born": "290 DC"
@@ -75,7 +75,7 @@ export default{
       "firstName": "Robert",
       "lastName": "Baratheon",
       "fullName": "Robert Baratheon",
-      "title": "Lord of the Seven Kingdoms",
+      "title": "King of the Seven Kingdoms",
       "family": "House Baratheon",
       "imageUrl": "https://thronesapi.com/assets/images/robert-baratheon.jpeg",
       "born": "262 DC"
@@ -86,7 +86,7 @@ export default{
       "lastName": "Lannister",
       "fullName": "Jamie Lannister",
       "title": "Lord Commander of the Kingsguard",
-      "family": "House Lannister",
+      "family": "Lannister",
       "imageUrl": "https://thronesapi.com/assets/images/jaime-lannister.jpg",
       "born": "262 DC",
       "death": "305 DC"
@@ -97,7 +97,7 @@ export default{
       "lastName": "Lannister",
       "fullName": "Cersei Lannister",
       "title": "Lady of Casterly Rock",
-      "family": "House Lannister",
+      "family": "Lannister",
       "imageUrl": "https://thronesapi.com/assets/images/cersei.jpg",
       "born": "262 DC",
       "death": "305 DC"
@@ -118,7 +118,7 @@ export default{
       "firstName": "Robb",
       "lastName": "Stark",
       "fullName": "Rob Stark",
-      "title": "Lord of Winterfell",
+      "title": "King of the North",
       "family": "House Stark",
       "imageUrl": "https://thronesapi.com/assets/images/robb-stark.jpg",
       "born": "283 DC",
@@ -139,8 +139,8 @@ export default{
       "firstName": "Joffrey",
       "lastName": "Baratheon",
       "fullName": "Joffrey Baratheon",
-      "title": "Lord of the Seven Kingdoms, Protector of the Realm",
-      "family": "House Lanister",
+      "title": "King of the Seven Kingdoms, Protector of the Realm",
+      "family": "Baratheon",
       "imageUrl": "https://thronesapi.com/assets/images/joffrey.jpg",
       "born": "286 DC",
       "death": "300 DC"
@@ -151,7 +151,7 @@ export default{
       "lastName": "Lannister",
       "fullName": "Tyrion Lannister",
       "title": "Hand of the Queen",
-      "family": "House Lanister",
+      "family": "Lannister",
       "imageUrl": "https://thronesapi.com/assets/images/tyrion-lannister.jpg",
       "born": "272 DC"
     },
@@ -171,8 +171,8 @@ export default{
       "firstName": "Petyr",
       "lastName": "Baelish",
       "fullName": "Petyr Baelish",
-      "title": "Littlefinger",
-      "family": "House Baelish",
+      "title": "Master of Coin",
+      "family": "Baelish",
       "imageUrl": "https://thronesapi.com/assets/images/littlefinger.jpg",
       "born": "264 AL",
       "death": "305 AL"
@@ -203,7 +203,7 @@ export default{
       "lastName": "Unknown",
       "fullName": "Varys",
       "title": "Master of Whisperers",
-      "family": "Unknown",
+      "family": "King's council",
       "imageUrl": "https://thronesapi.com/assets/images/varys.jpg",
       "born": null
     },
@@ -245,7 +245,7 @@ export default{
       "firstName": "Brienne",
       "lastName": "Tarth",
       "fullName": "Brienne of Tarth",
-      "title": "Lady Brienne",
+      "title": "Commander of the Kingsguard",
       "family": "Tarth",
       "imageUrl": "https://thronesapi.com/assets/images/brienne-tarth.jpeg",
       "born": "280 AL"
@@ -256,7 +256,7 @@ export default{
       "lastName": "None",
       "fullName": "Missandei",
       "title": "Queen's Personal Advisor",
-      "family": "Naathi",
+      "family": "freedmen",
       "imageUrl": "https://thronesapi.com/assets/images/missandei.jpeg",
       "born": "289 DC"
     },
@@ -266,17 +266,17 @@ export default{
       "lastName": "None",
       "fullName": "Gilly",
       "title": "The Rabbit Keeper",
-      "family": "None",
+      "family": "Free Folk",
       "imageUrl": "https://thronesapi.com/assets/images/gilly.jpg",
       "born": null
     },
     {
       "id": 26,
       "firstName": "Viserys",
-      "lastName": "Targaryan",
+      "lastName": "Targaryen",
       "fullName": "Viserys Targaryn",
-      "title": "King Viserys III",
-      "family": "Targaryan",
+      "title": "King Viserys III, in the exile",
+      "family": "Targaryen",
       "imageUrl": "https://thronesapi.com/assets/images/viserys-targaryan.jpg",
       "born": "276 DC",
       "death": "298 DC"
@@ -286,7 +286,7 @@ export default{
       "firstName": "Rickon",
       "lastName": "Stark",
       "fullName": "Rickon Stark",
-      "title": "Prince",
+      "title": "Prince of the North",
       "family": "Stark",
       "imageUrl": "https://thronesapi.com/assets/images/rickon.jpg",
       "born": "295 DC"
@@ -307,7 +307,7 @@ export default{
       "lastName": "Naharis",
       "fullName": "Daario",
       "title": "Commander of the Second Sons",
-      "family": "Naharis",
+      "family": "Targaryen",
       "imageUrl": "https://thronesapi.com/assets/images/daario.jpg",
       "born": null
     },
@@ -327,7 +327,7 @@ export default{
       "firstName": "Tommen",
       "lastName": "Baratheon",
       "fullName": "Tommen Baratheon",
-      "title": "Prince",
+      "title": "King of the Seven Kingdoms",
       "family": "Baratheon",
       "imageUrl": "https://thronesapi.com/assets/images/tommen.jpg",
       "born": "291 DC"
@@ -357,7 +357,7 @@ export default{
       "firstName": "Robert",
       "lastName": "Baratheon",
       "fullName": "Robert Baratheon",
-      "title": "King",
+      "title": "King of the Seven Kingdoms",
       "family": "Baratheon",
       "imageUrl": "https://thronesapi.com/assets/images/king-robert.jpg",
       "born": "262 DC",
@@ -401,7 +401,7 @@ export default{
       "lastName": "Sparrow",
       "fullName": "The High Sparrow",
       "title": "High Septon",
-      "family": "Sparrow",
+      "family": "Sourceres",
       "imageUrl": "https://thronesapi.com/assets/images/the-high-sparrow.jpg",
       "born": null
     },
@@ -411,7 +411,7 @@ export default{
       "lastName": "Martell",
       "fullName": "Oberyn Martell",
       "title": "Red Viper of Dorne",
-      "family": "Viper",
+      "family": "Martell",
       "imageUrl": "https://thronesapi.com/assets/images/red-viper.jpg",
       "born": "258 DC",
       "death": "300 DC"
@@ -422,7 +422,7 @@ export default{
       "lastName": "The Red Woman",
       "fullName": "Melisandre",
       "title": "Melisandre of Asshai",
-      "family": "Unkown",
+      "family": "Sorcerers",
       "imageUrl": "https://thronesapi.com/assets/images/melisandre.jpg",
       "born": null
     },
@@ -432,7 +432,7 @@ export default{
       "lastName": "H'ghar",
       "fullName": "Jaqen H'ghar",
       "title": "Faceless Men of Braavos",
-      "family": "Lorath",
+      "family": "Sorcerers",
       "imageUrl": "https://thronesapi.com/assets/images/jaqen-hghar.jpg",
       "born": null
     },
@@ -453,7 +453,7 @@ export default{
       "lastName": "Sand",
       "fullName": "Ellaria Sand",
       "title": "Paramour of Prince Oberyn Martell",
-      "family": "Sand",
+      "family": "Martell",
       "imageUrl": "https://thronesapi.com/assets/images/ellaria-sand.jpg",
       "born": null
     },
@@ -462,7 +462,7 @@ export default{
       "firstName": "Tormund",
       "lastName": "Giantsbane",
       "fullName": "Tormund Giantsbane",
-      "title": "Free Folk Warrior",
+      "title": "Warrior",
       "family": "Free Folk",
       "imageUrl": "https://thronesapi.com/assets/images/tormund-giantsbane.jpg",
       "born": null
@@ -499,11 +499,11 @@ export default{
     },
     {
       "id": 48,
-      "firstName": "",
-      "lastName": "Pycelle",
+      "firstName": "Pycelle",
+      "lastName": "",
       "fullName": "Pycelle",
       "title": "Grand Maester of the Seven Kingdoms",
-      "family": "",
+      "family": "King's council",
       "imageUrl": "https://thronesapi.com/assets/images/pycelle.jpg",
       "born": "216 DC",
       "death": "300 DC"
@@ -514,7 +514,7 @@ export default{
       "lastName": "Worm",
       "fullName": "Grey Worm",
       "title": "Commander of the Unsullied",
-      "family": "Worm",
+      "family": "freedmen",
       "imageUrl": "https://thronesapi.com/assets/images/greyworm.jpg",
       "born": null
     },
@@ -534,7 +534,7 @@ export default{
       "lastName": "Grand Maester",
       "fullName": "Qyburn",
       "title": "Former maester of the Citadel",
-      "family": "Qyburn",
+      "family": "Sorcerers",
       "imageUrl": "https://thronesapi.com/assets/images/qyburn.jpg",
       "born": null
     },

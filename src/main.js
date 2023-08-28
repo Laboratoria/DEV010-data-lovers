@@ -36,26 +36,10 @@ function pokemonCards(pokemonArray){
     
   });
 }
-//document.addEventListener('DOMContentLoaded', pokemonCards);
+
 document.addEventListener('DOMContentLoaded', () => {
   pokemonCards(data.pokemon);
 });
-/*function cardDetalladas(pokemonInfo){
-
-  const modal = document.createElement("div");
-  modal.classList.add('pokemon-modal');
-
-  const contenidoModal = `
-      <h2>${pokemonInfo.name}</h2>
-      <p>Número: ${pokemonInfo.num}</p>
-      <p>Tipo: ${pokemonInfo.type.join(', ')}</p>
-      <p>Descripción: ${pokemonInfo.about}</p>
-      <p>
-    `;
-  const ventanaEmerge = window.open('', '_blank', 'width=300,height=300');//una nueva ventana,se abre en una pestaña.
-  ventanaEmerge.document.write(`<html><body>${contenidoModal}</body></html>`);
-  ventanaEmerge.document.close();
-}*/
 
 function cardDetalladas(pokemonInfo) {
   const modal = document.getElementById('modal');
@@ -92,7 +76,6 @@ btnBuscar.addEventListener("click", () => {
   const recibeNomNum = inputElement.value;
 
   const busquedaInfo = busquedaNomNum(data, recibeNomNum);
-  //return pokemon.name.includes(recibeNomNum);
   rootElement.innerHTML = "";
   if (busquedaInfo) {
     pokemonCards([busquedaInfo]);
@@ -101,15 +84,20 @@ btnBuscar.addEventListener("click", () => {
     const num = parseInt(recibeNomNum);
     if(num < 1 || num > 251){
       alert("Ingresa un número valido del 1 al 251");
-    } else { throw new TypeError("Error");
-      
+    } if (num.toString().length === 2 || num.toString().length === 1){
+      const formatoDeNum = num.toString().padStart(3, "00");
+      const busquedaInfo = busquedaNomNum(data, formatoDeNum);
+      if (busquedaInfo){
+        rootElement.innerHTML = ""
+        pokemonCards([busquedaInfo]);
+      } else {
+        alert("No se encontro ningun Pokémon con ese numero")
+      }
     }
   }
   
 });
   
-
-
 //else{ TypeError("El pokemon que buscaste no esta disponible")
   
 //BUSQUEDA POR ELEMENTO
@@ -126,19 +114,28 @@ btnType.addEventListener("click", () => {
   rootElement.innerHTML = "";
   pokemonCards(filtrarPokemon);
 });
-
-const btnOrdenarNombre = document.getElementById('btn-ordenar-nombre');
+//ORDENAR ALFABETICAMENTE
+const btnOrdenarNombre = document.getElementById('btn-ordenar-asc');
 btnOrdenarNombre.addEventListener('click', () => {
   const pokemonOrdenados = sortData(data, 'name', 'asc');
   rootElement.innerHTML = '';
   pokemonCards(pokemonOrdenados);
 });
+//ORDENAR ALFABETICAMENTE DESCENDENTEMENTE 
+const btnOrdenarNombre2 = document.getElementById('btn-ordenar-desc');
+btnOrdenarNombre2.addEventListener('click', () => {
+  const pokemonOrdenados = sortData(data, 'name', 'desc');
+  rootElement.innerHTML = '';
+  pokemonCards(pokemonOrdenados);
+});
 
+//ORDENAR ASCENDENTEMENTE POR NUMERO 
 const btnOrdenarNumero = document.getElementById('btn-ordenar-numero');
 btnOrdenarNumero.addEventListener('click', () => {
   const pokemonesOrdenados = sortData(data, 'num', 'asc',);
   rootElement.innerHTML = '';
   pokemonCards(pokemonesOrdenados);
 });
+
 
 

@@ -10,7 +10,7 @@ export function busquedaNomNum (data, nameOrNum){
 
 export function filtrarPorTipo (data, condition){
   return data.pokemon.filter(pokemon => {
-    return condition(pokemon); 
+    return condition (pokemon); 
   });
 }
 
@@ -23,10 +23,13 @@ export function sortData(data, sortBy, sortOrder) {
 
     if (sortOrder === 'asc') {
       return valueA.localeCompare(valueB);
-    } else if (sortOrder === 'desc') {
+    } if (sortOrder === 'desc') {
       return valueB.localeCompare(valueA);
     }
+  
+
   });
+  
   return sortedData;
 }
 

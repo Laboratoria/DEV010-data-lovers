@@ -3,8 +3,8 @@ import { filtrarIdioma, ordenar, filtrarPaisesLimitantes, calcularArea } from '.
 
 import data from './data/countries/countries.js';
 
-// Mostrar en Lista desplegable la información
 
+// Boton de volver 
 const opcionSeleccionada = document.getElementById("opciones");
 const botonInicio = document.getElementById("volver");
 botonInicio.addEventListener("click", volverInicio);
@@ -48,18 +48,6 @@ opcionSeleccionada.addEventListener("change", function () {
 })
 
 
-const valorSeleccionado = opcionSeleccionada.value;
-if (valorSeleccionado === "button1") {
-  document.getElementById("button1").style.display = "block";
-  document.getElementById("button2").style.display = "none";
-
-}
-else if (valorSeleccionado === "button2") {
-  document.getElementById("button2").style.display = "block";
-  document.getElementById("button1").style.display = "none";
-
-}
-
 // me trae de la data nombre y banderas
 const root = document.getElementById('root');
 
@@ -71,7 +59,7 @@ function pintarData(data) {
     if (data[i].subregion === 'South America') {
 
       const country = data[i];
-      const languages = Object.values(country.languages).join(', ');
+      const languages = Object.values(country.languages).join(', '); // object.value convierte los valores de un objeto en un array, join une los elementos de un array 
 
       contentRootInfo += `<div class="bandera-container">
 
@@ -92,23 +80,24 @@ function pintarData(data) {
         </div>`;
     }
   }
-  root.innerHTML = contentRootInfo;
-
+  root.innerHTML = contentRootInfo; // lo traigo desde html y digo que es igual a variable contentRootInfo
+  
+  // selecciona cada badera y luego itera sobre cada una de ellas 
   const banderaImages = document.querySelectorAll('.Bandera');
-
+  
   banderaImages.forEach(image => {
-    const container = image.closest('.bandera-container');
-    const infoBack = container.querySelector('.info-back');
+    const container = image.closest('.bandera-container'); // closest encuentra el mas cercano e igual con un selector especifico
+    const infoBack = container.querySelector('.info-back'); // si se encuentra una concidencia se almacena en container 
 
 
     image.addEventListener('click', function () {
-      container.classList.toggle('show-info');
+      container.classList.toggle('show-info'); // toggle agrega o quita (en este caso esta tratando de alternas la clase .show-info)
 
       image.classList.toggle('rotate');
     });
 
     infoBack.addEventListener('click', function () {
-      container.classList.remove('show-info');
+      container.classList.remove('show-info'); //remove elimina un elemento  en este caso esta eliminando show-info
       image.classList.remove('rotate');
 
     });

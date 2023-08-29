@@ -15,7 +15,7 @@
     <img src="Imagenes/sudamerica.jpg" id="sudamerica">Cultura-travels
   </h1>
 
-  <header id="botones">
+  <main id="botones">
 
     <button id="volver" class="button">Inicio</button>
 
@@ -68,13 +68,13 @@
       <option value="Dutch">Dutch</option>
       <option value="French">French</option>
     </select>
-  </header>
+  </main>
 
   <!--Calcular area total-->
   <form id="areaForm" style="display: none">
-    <label for="área total" id="area">Calcular área total:</label>
+    <label for="area1" id="area">Calcular área total:</label> <!-- utilizo label for para enlazar el input con el label (area1)-->
     <input type="text" id="area1" name="area1" placeholder="Nombre del país">
-    <label for="vs"> vs </label>
+    <label for="area2"> vs </label>
     <input type="text" id="area2" name="area2" placeholder="Nombre de país">
     <button type="button" id="calcular" class="buttonCalcular">Calcular</button>
     <button type="button" id="closeModalButton" class="buttonCalcular">volver a calcular</button>
@@ -82,10 +82,7 @@
       <p>El área total calculada es: <span id="areaResultado"></span></p>
 
     </section>
-
   </form>
-
-
 
   <div id="root"><!--principal de html para ser llamado en js-->
     
@@ -99,5 +96,4 @@
   </footer>
 
 </body>
-
 </html>

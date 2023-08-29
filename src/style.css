@@ -14,7 +14,6 @@ h1 {
     display: flex;
     /* visualizar contenido  */
     justify-content: center;
-    /* se aplica a display: center para que el texto quede centrado*/
     padding: 10px;
     background-color: #ffffff;
     color: #250ac2;
@@ -30,7 +29,8 @@ h1 {
 
 #root {
     /* todo lo del estilo cajon de banderas*/
-    display: grid;
+    display: grid; 
+    /*Contenedor de cuadricula */
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     /*Distribuir las columnas segun ancho de pagina */
     gap: 40px;

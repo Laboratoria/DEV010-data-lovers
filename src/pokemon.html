@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Data Lovers</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <img
+      src="https://1000marcas.net/wp-content/uploads/2020/01/Logo-Pokemon.png"
+      alt="Logo de Pokémon"
+      id="pokemon2"
+    />
+    <main>
+      <div class="filter-container">
+        <div class="input-container">
+          <div class="input-row">
+            <select id="type-select">
+              <option value="">Type</option>
+              <option value="bug">Bug</option>
+              <option value="dark">Dark</option>
+              <option value="dragon">Dragon</option>
+              <option value="electric">Electric</option>
+              <option value="fairy">Fairy</option>
+              <option value="fighting">Fighting</option>
+              <option value="fire">Fire</option>
+              <option value="flying">Flying</option>
+              <option value="ghost">Ghost</option>
+              <option value="grass">Grass</option>
+              <option value="ground">Ground</option>
+              <option value="ice">Ice</option>
+              <option value="normal">Normal</option>
+              <option value="poison">Poison</option>
+              <option value="psychic">Psychic</option>
+              <option value="rock">Rock</option>
+              <option value="steel">Steel</option>
+              <option value="water">Water</option>
+            </select>
+            <p id="average-attack">Average Attack:</p>
+            <input
+              type="text"
+              id="name-input"
+              placeholder="Enter Pokemon name..."
+            />
+          </div>
+          <div class="button-container">
+            <button id="ascend-button">A - Z</button>
+            <button id="descend-button">Z - A</button>
+            <button id="ascend-number-button">1 - 251</button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <form class="form" action="index.html">
+          <button id="boton1" name="info" class="imagen-button2"></button>
+        </form>
+      </div>
+      <div id="pokemon-container" class="card-container"></div>
+      <script src="main.js" type="module"></script>
+    </main>
+  </body>
+</html>

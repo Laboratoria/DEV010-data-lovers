@@ -1,0 +1,309 @@
+/* Estilos generales del cuerpo de la página */
+body {
+    /* Configuración del fondo, margen y alineación del cuerpo */
+    background-image: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
+    margin: 0; /* Sin márgenes alrededor del cuerpo */
+    display: flex; /* Utiliza el modelo de caja flexible */
+    flex-direction: column; /* Los elementos se apilan en columna */
+    align-items: center; /* Centra horizontalmente los elementos */
+    min-height: 100vh; /* Altura mínima de la ventana gráfica */
+    background-color: #f0f0f0; /* Color de fondo de la página */
+    font-family: Arial, sans-serif; /* Fuente predeterminada */
+}
+
+/* Estilos para el contenedor de imágenes, botón y logo */
+.container {
+    /* Configuración de espaciado y alineación del contenedor */
+    margin-top: 5px;
+    display: flex; /* Utiliza el modelo de caja flexible */
+    flex-direction: column; /* Los elementos se apilan en columna */
+    justify-content: center; /* Centra verticalmente los elementos */
+    align-items: center; /* Centra horizontalmente los elementos */
+    text-align: center; /* Alinea el contenido al centro horizontalmente */
+}
+
+/* Estilos para las imágenes en el contenedor */
+.container img {
+    /* Ajusta las imágenes para que se ajusten al contenedor */
+    max-width: 100%; /* Imagen no debe exceder el ancho del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin: 0; /* Sin márgenes alrededor de las imágenes */
+}
+
+/* Estilos para el botón */
+.form {
+    /* Configuración de alineación y espaciado del botón */
+    display: flex; /* Utiliza el modelo de caja flexible */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    margin-bottom: 5px; /* Espacio inferior */
+}
+
+/* Estilos para el botón de imagen */
+.image-button {
+    /* Apariencia del botón de imagen */
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/769px-Pokebola-pokeball-png-0.png');
+    background-size: cover; /* Ajusta la imagen para cubrir el área del botón */
+    background-position: center; /* Centra la imagen en el botón */
+    border: none; /* Sin borde */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 50%; /* Borde redondeado para hacer un círculo */
+}
+/* Media Query para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .imagen-button {
+        width: 10px; /* Reducir el ancho del botón en pantallas pequeñas */
+        height: 10px; /* Reducir la altura del botón en pantallas pequeñas */
+    }
+}
+
+/* Estilos para la imagen pokemon */
+#pokemon1{
+    /* Configuración de tamaño y alineación de la imagen */
+    width: 35%; /* Ancho de la imagen */
+    height: auto; /* Altura automática para mantener la proporción */
+    display: block; /* Elimina el espacio extra debajo de la imagen */
+    margin-top: 2px; /* Margen arriba */
+    margin-bottom: 10px; /* Margen abajo */
+
+}
+#pokemon2{
+    /* Configuración de tamaño y alineación de la imagen */
+    width: 25%; /* Ancho de la imagen */
+    height: auto; /* Altura automática para mantener la proporción */
+    display: block; /* Elimina el espacio extra debajo de la imagen */
+
+
+}
+#imaPokemonInicio{
+       /* Configuración de tamaño y alineación de la imagen */
+       width: 50%; /* Ancho de la imagen */
+       height: auto; /* Altura automática para mantener la proporción */
+       display: block; /* Elimina el espacio extra debajo de la imagen */
+       margin: 10%; /* Centra la imagen horizontalmente y le da un margen gral */
+  }
+  
+/* Estilos para el boton pokebola abierta*/
+.imagen-button2 {
+    background-image: url('https://www.pngall.com/wp-content/uploads/4/Pokemon-Pokeball-Transparent.png'); /* Imagen de fondo del botón */
+    background-size: cover; /* Ajusta la imagen para cubrir el área del botón */
+    background-position: center; /* Centra la imagen en el botón */
+    border: none; /* Sin borde */
+    width: 40px; /* Ancho del botón */
+    height: 40px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 50%; /* Borde redondeado para hacer un círculo */
+}
+
+
+/* Media Query para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .imagen-button2 {
+        width: 20px; /* Reducir el ancho del botón en pantallas pequeñas */
+        height: 20px; /* Reducir la altura del botón en pantallas pequeñas */
+    }
+}
+/* Estilos para el contenedor de las tarjetas */
+.card-container {
+    display: flex; /* Muestra los elementos como una fila */
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan si no caben en una línea */
+    justify-content: center; /* Centra horizontalmente las tarjetas */
+    margin: 20px auto; /* Margen en la parte superior e inferior, y margen lateral automático para centrar horizontalmente */
+    max-width: 1200px; /* Ancho máximo para el contenedor de tarjetas */
+    padding: 0 20px; /* Espaciado lateral para evitar que las tarjetas lleguen demasiado cerca de los bordes de la pantalla */
+}
+
+/* Estilos para cada tarjeta individual */
+.card {
+    text-align: center; /* Alineación del contenido al centro */
+    background-color: rgb(242, 242, 247); /* Color de fondo de la tarjeta */
+    border-radius: 10px; /* Redondea las esquinas de la tarjeta */
+    border: 3px solid rgb(229, 229, 232); /* Borde de 3px sólido con color */
+    margin: 20px; /* Margen alrededor de la tarjeta */
+    padding: 20px; /* Espaciado interno de la tarjeta */
+    width: 100%; /* Ancho del 100% para adaptarse al contenedor */
+    max-width: 250px; /* Ancho máximo de cada tarjeta */
+    font-family: ADLaM Display; /* Fuente del texto */
+}
+
+/* Estilos para las imágenes dentro de las tarjetas */
+.card img {
+    width: 70%; /* Ancho del 100% para ocupar el espacio disponible */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin: 10px auto; /* Centra verticalmente la imagen dentro de la tarjeta */
+}
+
+.card h2::first-letter { /* Primera letra del nombre del Pokémon */
+    text-transform: uppercase; /* Convierte la primera letra en mayúscula */
+    margin-top: 10px; /* Margen superior */
+    font-size: 1.2em; /* Tamaño de fuente aumentado */
+}
+
+.card p1 {
+    text-align: justify; /* Alineación justificada del texto */
+    margin: 10px 0; /* Márgenes superior e inferior */
+    font-size: 1.2em; /* Tamaño de fuente */
+    color: black; /* Color de texto */
+    background-color: #eff1f5; /* Color de fondo del párrafo */
+}
+/* Unificación de estilos para los párrafos p2 a p8 */
+.card p2,
+.card p3,
+.card p4,
+.card p5,
+.card p6,
+.card p7,
+.card p8 {
+    text-transform: capitalize; /* Convierte la primera letra en mayúscula */
+    text-align: justify; /* Alineación justificada del texto */
+    margin: 10px 0; /* Márgenes superior e inferior */
+    font-size: 1.2em; /* Tamaño de fuente */
+}
+
+.card h3 {
+    text-align: center;/* Alineación centrada del texto */
+    font-size: 1.2em; /* Tamaño de fuente */
+}
+
+.card .additional-info{
+    text-align: justify; /* Alineación justificada del texto */
+    display: none; /* Ocultar información adicional por defecto */
+}
+
+.card:hover .additional-info {
+    display: block; /* Mostrar información adicional en hover */
+}
+
+.image-button::after{
+content: "GO"; /* Agregar el texto "IR" como contenido después del botón */
+opacity: 0; /* Ocultar el texto */
+transition: opacity 0.3s ease-in-out; /* Agregar una transición suave */
+color:  #fbcb04; /* color para el texto de GO que aparece al piner el cursor */
+font-size: 25px; /* Tamano del texto */
+}
+
+.image-button:hover::after {
+    opacity: 1; /* Mostrar el texto "GO" cuando el cursor está sobre el botón */
+    font-size: 25px;/* Tamano del texto */
+    font-weight: bold; /* Fuente en negrita */
+}
+
+@media screen and (max-width: 768px) {
+    header img {
+        max-width: 70%; /* Reducir el tamaño del logo en pantallas más pequeñas */
+    }
+    .form {
+        margin-bottom: 10px; /* Espaciado más pequeño en pantallas más pequeñas */
+    }
+    .card {
+        width: calc(75% - 30px); /* Ancho de las tarjetas en pantallas más pequeñas */
+    }
+}
+
+input {
+    color: rgb(17, 4, 87); /* Color de texto */
+    padding: 3px 10px; /* Espaciado interno de 3px arriba/abajo y 10px izquierda/derecha */
+    border: powderblue 5px solid; /* Borde sólido de 5px de color */
+    border-top-left-radius: 20px; /* Borde redondeado superior izquierdo*/
+    border-bottom-right-radius: 20px; /* Borde redondeado inferior derecho*/
+    background-color: white; /* Color de fondo */
+    font-size: 17px; /* Tamaño de fuente de 17px */
+    font-family: Broadway; /* Fuente del texto */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    
+  }
+
+/* Estilos base para lista desplegable del select*/
+select {
+    color: rgb(17, 4, 87); /* Color de texto en formato RGB */
+    padding: 3px 10px; /* Espaciado interno de 3px arriba/abajo y 10px izquierda/derecha */
+    border: powderblue 5px solid; /* Borde sólido de 5px de color */
+    border-top-left-radius: 20px; /* Borde redondeado superior izquierdo de 20px */
+    border-bottom-right-radius: 20px; /* Borde redondeado inferior derecho de 20px */
+    background-color: white; /* Color de fondo */
+    font-size: 17px; /* Tamaño de fuente de 17px */
+    font-family: Broadway; /* Fuente del texto */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+/* Estilos base para los botones */
+button {
+    color: rgb(17, 4, 87); /* Color de texto en formato RGB */
+    padding: 3px 10px; /* Espaciado interno de 3px arriba/abajo y 10px izquierda/derecha */
+    border: PowderBlue 5px solid; /* Borde sólido de 5px de color */
+    border-top-left-radius: 20px; /* Borde redondeado superior izquierdo de 20px */
+    border-bottom-right-radius: 20px; /* Borde redondeado inferior derecho de 20px */
+    background-color: white; /* Color de fondo */
+    font-size: 17px; /* Tamaño de fuente de 17px */
+    font-family: Broadway; /* Fuente del texto */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+/* Estilos para el elemento con ID "average-attack" */
+#average-attack {
+    color: rgb(17, 4, 87); /* Color de texto en formato RGB */
+    padding: 3px 10px; /* Espaciado interno de 3px arriba/abajo y 10px izquierda/derecha */
+    border: PowderBlue 5px solid; /* Borde sólido de 5px de color */
+    border-top-left-radius: 20px; /* Borde redondeado superior izquierdo de 20px */
+    border-bottom-right-radius: 20px; /* Borde redondeado inferior derecho de 20px */
+    background-color: white; /* Color de fondo */
+    font-size: 17px; /* Tamaño de fuente de 17px */
+    font-family: Broadway; /* Fuente del texto */
+}
+
+/* Contenedor de filtro */
+.filter-container {
+    display: flex; /* Muestra los elementos como una fila */
+    flex-direction: column; /* Los elementos se apilan en columna */
+    align-items: center; /* Centra horizontalmente los elementos */
+    justify-content: center; /* Centra verticalmente los elementos */
+    gap: 10px; /* Espacio entre elementos */
+    margin-top: 10px; /* Margen superior de 10px */
+}
+
+/* Contenedor de botones */
+.button-container {
+    display: flex; /* Muestra los elementos como una fila */
+    align-items: center; /* Centra horizontalmente los elementos */
+    gap: 10px; /* Espacio entre elementos */
+}
+
+/* Contenedor de campos de entrada */
+.input-container {
+    display: flex; /* Muestra los elementos como una fila */
+    flex-direction: column; /* Los elementos se apilan en columna */
+    align-items: center; /* Centra horizontalmente los elementos */
+    gap: 10px; /* Espacio entre elementos */
+}
+
+/* Fila de campos de entrada */
+.input-row {
+    display: flex; /* Muestra los elementos como una fila */
+    align-items: center; /* Centra horizontalmente los elementos */
+    gap: 10px; /* Espacio entre elementos */
+}
+/* Media Query para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .filter-container {
+        align-items: center; /* Alinea los elementos al centro en pantallas pequeñas */
+    }
+
+    .input-container {
+        align-items: center; /* Alinea los elementos al centro en pantallas pequeñas */
+    }
+
+    .input-row {
+        flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
+    }
+
+    /* Ajusta el tamaño de fuente y el espaciado para pantallas pequeñas */
+    .filter-container button,
+    .filter-container select,
+    .filter-container input,
+    #average-attack {
+        font-size: 12px;
+        padding: 2px 8px;
+        max-width: 100%;
+    }
+}

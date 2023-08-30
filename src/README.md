@@ -29,6 +29,7 @@ Pensando en nuestro usuario, jugadora o jugador de Pokémon Go, que necesite rea
 Y finalmente un botón que regrese las tarjetas de pokémones a su estado original para realizar una nueva búsqueda 
 
 **Definición del producto**
+Data Lovers es un buscador y base de datos de la serie animada Pokémon. Esta base de datos alberga informacion de 251 pokémones y datos especificos como nombre, tipo, número y una descripción de cada pokémon. El buscador esta pensado para que sea utilizado por usuarios del videojuego Pokemon Go; cuando necesiten buscar algún dato en especifico o detalles de un pokémon capturado y cuando requieran más información para mejorar su estrategia de juego, nuestra aplicación cuenta con un buscador de fácil acceso, sencillo y fácil de comprender. 
 
 
 

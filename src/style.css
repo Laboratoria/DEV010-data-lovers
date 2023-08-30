@@ -43,24 +43,48 @@ body {
 .image-button {
     /* Apariencia del botón de imagen */
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/769px-Pokebola-pokeball-png-0.png');
-    background-size: cover; /* Ajusta la imagen al tamaño del botón */
+    background-size: cover; /* Ajusta la imagen para cubrir el área del botón */
     background-position: center; /* Centra la imagen en el botón */
     border: none; /* Sin borde */
     width: 50px; /* Ancho del botón */
     height: 50px; /* Altura del botón */
     cursor: pointer; /* Cambia el cursor al pasar por encima */
-    border-radius: 30%; /* Borde redondeado */
+    border-radius: 50%; /* Borde redondeado para hacer un círculo */
+}
+/* Media Query para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .imagen-button {
+        width: 10px; /* Reducir el ancho del botón en pantallas pequeñas */
+        height: 10px; /* Reducir la altura del botón en pantallas pequeñas */
+    }
 }
 
 /* Estilos para la imagen pokemon */
-img {
+#pokemon1{
     /* Configuración de tamaño y alineación de la imagen */
-    width: 30%; /* Ancho de la imagen */
+    width: 35%; /* Ancho de la imagen */
     height: auto; /* Altura automática para mantener la proporción */
     display: block; /* Elimina el espacio extra debajo de la imagen */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-}
+    margin-top: 2px; /* Margen arriba */
+    margin-bottom: 10px; /* Margen abajo */
 
+}
+#pokemon2{
+    /* Configuración de tamaño y alineación de la imagen */
+    width: 25%; /* Ancho de la imagen */
+    height: auto; /* Altura automática para mantener la proporción */
+    display: block; /* Elimina el espacio extra debajo de la imagen */
+
+
+}
+#imaPokemonInicio{
+       /* Configuración de tamaño y alineación de la imagen */
+       width: 50%; /* Ancho de la imagen */
+       height: auto; /* Altura automática para mantener la proporción */
+       display: block; /* Elimina el espacio extra debajo de la imagen */
+       margin: 10%; /* Centra la imagen horizontalmente y le da un margen gral */
+  }
+  
 /* Estilos para el boton pokebola abierta*/
 .imagen-button2 {
     background-image: url('https://www.pngall.com/wp-content/uploads/4/Pokemon-Pokeball-Transparent.png'); /* Imagen de fondo del botón */
@@ -179,11 +203,11 @@ font-size: 25px; /* Tamano del texto */
 }
 
 input {
-    color: rgb(17, 4, 87); /* Color de texto en formato RGB */
+    color: rgb(17, 4, 87); /* Color de texto */
     padding: 3px 10px; /* Espaciado interno de 3px arriba/abajo y 10px izquierda/derecha */
-    border: PowderBlue 5px solid; /* Borde sólido de 5px de color "PowderBlue" (sustituir por valor real) */
-    border-top-left-radius: 20px; /* Borde redondeado superior izquierdo de 20px */
-    border-bottom-right-radius: 20px; /* Borde redondeado inferior derecho de 20px */
+    border: powderblue 5px solid; /* Borde sólido de 5px de color */
+    border-top-left-radius: 20px; /* Borde redondeado superior izquierdo*/
+    border-bottom-right-radius: 20px; /* Borde redondeado inferior derecho*/
     background-color: white; /* Color de fondo */
     font-size: 17px; /* Tamaño de fuente de 17px */
     font-family: Broadway; /* Fuente del texto */
@@ -195,7 +219,7 @@ input {
 select {
     color: rgb(17, 4, 87); /* Color de texto en formato RGB */
     padding: 3px 10px; /* Espaciado interno de 3px arriba/abajo y 10px izquierda/derecha */
-    border: powderblue 5px solid; /* Borde sólido de 5px de color "PowderBlue" (sustituir por valor real) */
+    border: powderblue 5px solid; /* Borde sólido de 5px de color */
     border-top-left-radius: 20px; /* Borde redondeado superior izquierdo de 20px */
     border-bottom-right-radius: 20px; /* Borde redondeado inferior derecho de 20px */
     background-color: white; /* Color de fondo */
@@ -207,7 +231,7 @@ select {
 button {
     color: rgb(17, 4, 87); /* Color de texto en formato RGB */
     padding: 3px 10px; /* Espaciado interno de 3px arriba/abajo y 10px izquierda/derecha */
-    border: PowderBlue 5px solid; /* Borde sólido de 5px de color "PowderBlue" (sustituir por valor real) */
+    border: PowderBlue 5px solid; /* Borde sólido de 5px de color */
     border-top-left-radius: 20px; /* Borde redondeado superior izquierdo de 20px */
     border-bottom-right-radius: 20px; /* Borde redondeado inferior derecho de 20px */
     background-color: white; /* Color de fondo */
@@ -220,7 +244,7 @@ button {
 #average-attack {
     color: rgb(17, 4, 87); /* Color de texto en formato RGB */
     padding: 3px 10px; /* Espaciado interno de 3px arriba/abajo y 10px izquierda/derecha */
-    border: PowderBlue 5px solid; /* Borde sólido de 5px de color "PowderBlue" (sustituir por valor real) */
+    border: PowderBlue 5px solid; /* Borde sólido de 5px de color */
     border-top-left-radius: 20px; /* Borde redondeado superior izquierdo de 20px */
     border-bottom-right-radius: 20px; /* Borde redondeado inferior derecho de 20px */
     background-color: white; /* Color de fondo */

@@ -1,0 +1,433 @@
+/* Definición de la fuente personalizada "Pokemon Solid" */
+/* @font-face {
+  font-family: 'Lato', sans-serif;
+  src: url("Fuente-pokemon/Pokemon\Solid.ttf") format("truetype");
+} */
+body {
+  font-family: 'Lato', sans-serif;
+  flex-wrap: wrap;
+}
+
+/* Estilos para el encabezado */
+header {
+  display: flex;
+  /* Mostrar los elementos internos en línea */
+  align-items: center;
+  /* Centrar verticalmente los elementos */
+  justify-content: space-evenly;
+  /* Distribuir el espacio entre los elementos de manera uniforme */
+  background-color: rgba(25, 0, 138, 0.5);
+  /* Fondo semitransparente blanco */
+  border-radius: 10px;
+  /* Borde redondeado */
+  color: white;
+
+}
+
+/* Estilos para el logo */
+#logo {
+  width: 100px;
+  /* Ancho del logo */
+  background-color: transparent;
+  /* Fondo transparente */
+}
+
+
+
+/* Estilos para el contenedor principal */
+.container {
+  flex-direction: column;
+  /* Columnas flexibles */
+  align-items: center;
+  /* Centrar elementos horizontalmente */
+  /* position: relative; */
+}
+
+/* Estilos generales para el cuerpo de la página */
+body {
+  background-image: url("https://img.freepik.com/vector-gratis/resumen-degradado-fondo-lineas-diagonales_23-2150527316.jpg?w=740&t=st=1693440657~exp=1693441257~hmac=803aff06ced011c5fc993c3f3127229f18fad6c08db7f8e6f16913585c0e3ba1");
+  /* Imagen de fondo */
+  background-size: 100vw 100vh;
+  /* Tamaño de la imagen de fondo */
+}
+
+/* Estilos para listas no ordenadas */
+ul {
+  display: flex;
+  /* Mostrar los elementos en línea */
+  flex-direction: column;
+  /* Organizar en columna */
+}
+
+/* Estilos para el campo de búsqueda */
+.search {
+  display: flex;
+  /* Mostrar los elementos en línea */
+  align-items: center;
+  /* Centrar verticalmente los elementos */
+}
+
+.search button {
+  width: 80px;
+  /* Ancho del botón de búsqueda */
+}
+
+/* Estilos para botones específicos */
+#filterButton,
+#orderButton,
+#ascendingButton,
+#descendingButton {
+  margin-left: -65px;
+  /* Mover los botones hacia la izquierda */
+} 
+
+/* Estilos para el menú */
+.menu {
+  display: flex;
+  /* Mostrar los elementos en línea */
+  justify-content: space-between;
+  /* Distribuir el espacio entre los elementos */
+  align-items: center;
+  /* Centrar verticalmente los elementos */
+  width: 100%;
+  /* Ancho completo del menú */
+  margin-bottom: 10px;
+  /* Margen inferior */
+  flex-wrap: wrap;
+
+}
+
+/* Estilos para el contenedor de los Pokémon */
+#pokemon-grid {
+  display: flex;
+  /* Mostrar los elementos en línea */
+  flex-wrap: wrap;
+  /* Envolver los elementos en varias líneas */
+  justify-content: center;
+  /* Centrar horizontalmente los elementos */
+  border-radius: 10px;
+  /* Borde redondeado */
+}
+
+ #boxName {
+  color: #ffffff;
+
+}
+/* Estilos para campos de entrada */
+input {
+  border-radius: 10px;
+  /* Borde redondeado */
+  font-family: 'Lato', sans-serif;
+}
+
+/* Estilos para las tarjetas de Pokémon */
+.pokemon-card {
+  display: flex;
+  /* Mostrar los elementos en línea */
+  align-items: center;
+  /* Centrar verticalmente los elementos */
+  flex-direction: column;
+  /* Organizar en columna */
+  align-items: center;
+  /* Centrar horizontalmente los elementos */
+  border: 1px solid #1e90ff;
+  /* Borde sólido azul */
+  width: 100px;
+  /* Ancho de la tarjeta */
+  text-align: center;
+  /* Centrar el texto */
+  text-transform: capitalize;
+  /* Transformar el texto en mayúscula la primera letra */
+  border: 1px solid black;
+  /* Borde sólido negro */
+  margin: 10px;
+  /* Margen */
+  border-radius: 20px;
+  /* Borde redondeado */
+  background-color: rgba(253, 253, 253, 0.5);
+  /* Fondo semitransparente blanco */
+}
+
+p {
+
+  font-family: 'Lato', sans-serif;
+  color: #000000;
+}
+
+/* Estilos para imágenes de Pokémon en las tarjetas */
+.pokemon-card img {
+  width: 100px;
+  /* Ancho de la imagen */
+}
+
+/* Estilos generales para botones */
+button {
+  border-radius: 10px;
+  
+  border-color: #24cbaa;
+  border-width: 15px
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  
+}
+
+select {
+  font-family: 'Lato', sans-serif;
+  border-radius: 10px;
+}
+
+/* Definición de la animación "rainbow" */
+@keyframes rainbow {
+  0% {
+    border-color: #7a81e6;
+  }
+
+  14% {
+    border-color: #b8f5f0;
+  }
+
+  28% {
+    border-color: #0501f3;
+  }
+
+  42% {
+    border-color: #03fafa;
+  }
+
+  57% {
+    border-color: #00ffff;
+  }
+
+  71% {
+    border-color: rgb(4, 48, 247);
+  }
+
+  85% {
+    border-color: rgb(20, 3, 252);
+  }
+
+  100% {
+    border-color: rgb(0, 255, 255);
+  }
+}
+
+/* Aplicar animación "rainbow" a las tarjetas de Pokémon */
+.pokemon-card {
+  border: 3px solid;
+  animation: rainbow 5s linear infinite;
+}
+
+datalist {
+  max-height: 10px;
+  /* Define la altura máxima deseada */
+  overflow-y: auto;
+  /* Agrega una barra de desplazamiento vertical si es necesario */
+  width: 10%;
+  /* Establece el ancho completo */
+}
+
+#dialog {
+
+
+  position: fixed;
+  margin-top: 40px;
+  top: 50%;
+  left: 50%;
+  margin-bottom: 50px;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  width: 500px;
+  height: 400px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-size: 50vw 100vh;
+}
+
+#dialog img {
+  max-width: 100%;
+  height: auto;
+}
+
+#dialogClose {
+  margin-top: 10px;
+  background-color: #219094;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+
+.pokemon-dialog button.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.pokemon-info {
+  text-align: center;
+}
+
+.pokemon-info img {
+  max-width: 100%;
+  height: auto;
+}
+
+#pokeName {
+  color: #000000;
+  text-transform: capitalize;
+}
+
+.grass-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/resumen-mosaico-hexagonal-mosaico-diseno-fondo_1164-1259.jpg?w=360&t=st=1693502316~exp=1693502916~hmac=1f270f269988e1b69b8a4604e69b81bb72d34fc93a97f476d7d657035f0d5094");
+}
+
+.fire-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-colores-pastel-poli_53876-62611.jpg?w=740&t=st=1693502790~exp=1693503390~hmac=fc96b9c0c27a633165773d3603861e8b0c18e3a338ac5e4bda4d24bf21d2c4b6");
+}
+
+.normal-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-monocromatico-blanco-estilo-papel_23-2149024482.jpg?w=740&t=st=1693502996~exp=1693503596~hmac=49b2324cebe2ff4b6663dcd5c96219ca829f2e1aad249dae893bbd4e63377e90");
+}
+
+.water-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-abstracto-azul-formas-geometricas_1035-17545.jpg?w=740&t=st=1693497939~exp=1693498539~hmac=3d356200835e4a0475514aad3e731ef922989dc31947d5526e57023997c99e2d");
+}
+
+.flying-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-formas-geometricas-triangulo-abstracto_1035-23057.jpg?w=740&t=st=1693503072~exp=1693503672~hmac=76e89a60e196d945fd1c38ab7124415885d9f060d0d0c86e6a676bf61b14a643");
+}
+
+.fighting-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-acuarela-abstracta-suave-neutro_53876-100960.jpg?w=740&t=st=1693503266~exp=1693503866~hmac=14d31085ff53b445ed1c41b7df021424947b9c39a8a494021500d83e625ca28d");
+}
+
+.electric-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-poligonal-diseno-plano_23-2148901853.jpg?w=740&t=st=1693503498~exp=1693504098~hmac=571da957c640704991a97f068f6187682f5cd5125994d80ef5beef1df3702b84");
+}
+
+.ground-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-trazos-pincel_53876-90926.jpg?w=740&t=st=1693504543~exp=1693505143~hmac=67ef5d7cf2f05e45ef9c39a703ead13550b0b09655f9aec2bdb824dc8faaa81b");
+}
+
+.psychic-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-geometrico-abstracto_1035-18531.jpg?w=740&t=st=1693502696~exp=1693503296~hmac=0dee159bbda0f3e9a87dd8cc363e38d70a0d865bf546bd4484b6fee310b5622d");
+}
+
+.bug-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-baja-poli_53876-66347.jpg?w=740&t=st=1693503785~exp=1693504385~hmac=3c717a884554e07a408c0d84dd6cbaad288a02483d1e305b75d4e282423c3a92");
+}
+
+.ghost-bg {
+  background-image: url("https://th.bing.com/th/id/R.dd2aa52753de03beeab464a5f18608ab?rik=6N3sl%2bKTel0oaw&pid=ImgRaw&r=0");
+}
+
+.steel-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/diseno-monocromo-low-poly_1048-17214.jpg?w=740&t=st=1693503596~exp=1693504196~hmac=b19755e2ad2bd95f9385c3b303cbbab82d6cdeae9661ffd2b919044978478b8d");
+}
+
+.dragon-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/diseno-fondo-moderno-azul-3d_53876-87397.jpg?w=740&t=st=1693504630~exp=1693505230~hmac=e670d4ba6c59abefa2f654e6206eeb436ae3a6d8ce8c6a2140ecbd22c7582bca");
+}
+
+.rock-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-geometrico-naranja-claro_53876-113904.jpg?w=740&t=st=1693504501~exp=1693505101~hmac=f387d4a3abd36800e082589eb698c4fbc4160064491e05cebc658c48fffc2c00");
+}
+
+.dark-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-monocromatico-blanco_23-2149000661.jpg?w=740&t=st=1693504854~exp=1693505454~hmac=10800c380a849f4dd623237867c0cbab62ada118ff566a1aa623dc65580a1e34");
+}
+
+.fairy-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-poligonal-diseno-plano_23-2148928379.jpg?w=740&t=st=1693504118~exp=1693504718~hmac=d99848571cc93fad29bc045d12c8ffee3b361d246cb540be482bbad0947590da");
+}
+
+.poison-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-morado-degradado_23-2148902728.jpg?w=740&t=st=1693504686~exp=1693505286~hmac=f870fee3fd3417371b4a5420575a5d28022a3ed71de5fbbb4347a142f315d061");
+}
+
+.ice-bg {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-diseno-abstracto_1048-8430.jpg?w=740&t=st=1693504652~exp=1693505252~hmac=97e046e1550086e4617b3ec9dd51a5075bc1a4e2fc83d336b708a4da87d167f1");
+}
+
+
+@media only screen and (max-width : 900px) {
+  nav.menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    
+  }
+  #filterButton, #orderButton, #ascendingButton, #descendingButton {
+    margin-left: 0px;
+  }
+
+  select {
+    width: 100px;
+
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+  }
+
+  li {
+    flex-direction: column;
+  }
+  
+  li.search {
+    margin-right: 30px;
+  }
+
+  h1 {
+    font-size: 15px; 
+  }
+
+  img#logo {
+    width: 60px ;
+  }
+
+  #dialog {
+    width: 200px;
+    height: 200px;
+  }
+
+  #dialog img {
+    max-width: 50%;
+    height: auto;
+    margin: 0px;
+  }
+
+  .pokemon-info {
+    max-width: 50%;
+    height: auto;
+  }
+
+  p#boxName {
+    font-size: 15px;
+  }
+
+  h2 h3 {
+    font-size: 15px;
+    margin: 10px;
+  }
+
+  h2#pokeName {
+    margin: 5px;
+  }
+
+  p {
+    font-size: 10px;
+    margin: 0px;
+  }
+  }
+
+  

@@ -13,7 +13,6 @@
 * [7. Objetivos de aprendizaje](#7-objectivos-de-aprendizaje)
 * [8. Checklist](#8-checklist)
 
-*
 
 ## 1. Introducción
 

@@ -16,6 +16,7 @@ function generateResistantList(resistantTypes) {
 
 function generateWeaknessesList(weaknessesTypes) {
   return weaknessesTypes.join(', ');
+
   //extraer debilidad del objeto
 } 
 function sortPokemonsByNameAscending(pokemons) {
@@ -42,5 +43,6 @@ export {
   sortPokemonsByNameDescending,
   sortPokemonsByNumberAscending,
   calculateAverageAttack,
-};
+} 
+
 

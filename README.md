@@ -13,7 +13,7 @@
 * [7. Objetivos de aprendizaje](#7-objectivos-de-aprendizaje)
 * [8. Checklist](#8-checklist)
 
-***
+*
 
 ## 1. Introducción
 
@@ -68,7 +68,7 @@ El objetivo principal de los testeos de usabilidad es identificar problemas en l
 
 En esta ocacion logramos entender mas sobre las siguientes funciones:
 
-# HML
+# HTML
 
 * Comprender los conceptos básicos y su estructura.
 * Conocer la importancia de utilizar elementos semánticos en HTML para mejorar la accesibilidad y la optimización de motores de búsqueda.
@@ -85,7 +85,6 @@ En esta ocacion logramos entender mas sobre las siguientes funciones:
 * Aprender a manipular el DOM (Document Object Model) con JavaScript para interactuar con elementos HTML.
 * Comprender la programación orientada a objetos en JavaScript, incluyendo objetos, métodos y propiedades.
 * Conocer cómo trabajar con eventos y controladores de eventos para crear interacciones en una página web.
-
 
 ## 8 Checklist
 

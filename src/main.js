@@ -68,7 +68,7 @@ function showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2,
     const averageAttack = calculateAverageAttack(filteredPokemons);
     averageAttackElement.textContent = `Average Attack: ${averageAttack.toFixed(2)}`;
   } else {
-    averageAttackElement.textContent = ""; // Limpiar el texto si no hay tipo seleccionado
+    averageAttackElement.textContent = "Average Attack: "; 
   }
 
   if (sortedPokemons) {
@@ -106,7 +106,6 @@ typeSelect.addEventListener("change", (event) => {
   const nameFilter = nameInput.value;
   const sortedPokemons = sortPokemonsByNameAscending(pokemons);
   const sortedPokemons2 = sortPokemonsByNameDescending(pokemons);
-
   showPokemons(selectedType, nameFilter,sortedPokemons, sortedPokemons2);
 });
   
@@ -126,8 +125,7 @@ ascendButton.addEventListener("click", () => {
   const sortedPokemons = true; // Establecer orden ascendente
   const sortedPokemons2 = false; // Establecer orden descendente a falso
   showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2);
-  ascendButton.classList.add("active"); // Marcar el botón como activo
-  descendButton.classList.remove("active"); // Desactivar el botón descendente
+
 });
 
 // Agregar evento para el botón "Descendente"
@@ -137,8 +135,7 @@ descendButton.addEventListener("click", () => {
   const sortedPokemons = false; // Establecer orden ascendente a falso
   const sortedPokemons2 = true; // Establecer orden descendente
   showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2);
-  descendButton.classList.add("active"); // Marcar el botón como activo
-  ascendButton.classList.remove("active"); // Desactivar el botón ascendente
+
 });
 // Agregar evento para el botón "Ascendente" por número
 ascendNumberButton.addEventListener("click", () => {
@@ -148,9 +145,7 @@ ascendNumberButton.addEventListener("click", () => {
   const sortedPokemons2 = false; // Establecer orden descendente por nombre a falso
   const sortedPokemonsByNumber = true; // Establecer orden ascendente por número
   showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2, sortedPokemonsByNumber);
-  ascendButton.classList.remove("active"); // Desactivar el botón ascendente por nombre
-  descendButton.classList.remove("active"); // Desactivar el botón descendente por nombre
-  ascendNumberButton.classList.add("active"); // Marcar el botón ascendente por número como activo
+
 });
 
 // Mostrar todos los pokémones al cargar la página inicialmente

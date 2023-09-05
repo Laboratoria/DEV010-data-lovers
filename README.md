@@ -68,7 +68,7 @@ El objetivo principal de los testeos de usabilidad es identificar problemas en l
 
 En esta ocacion logramos entender mas sobre las siguientes funciones:
 
-# HML
+# HTML
 
 * Comprender los conceptos básicos y su estructura.
 * Conocer la importancia de utilizar elementos semánticos en HTML para mejorar la accesibilidad y la optimización de motores de búsqueda.

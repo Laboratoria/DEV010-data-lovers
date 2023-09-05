@@ -9,7 +9,7 @@
 * [3. Historias de usuario](#3-historias-de-usuario)
 * [4. Alta Fidelidad](#4-alta-fidelidad)
 * [5. Responsive](#5-responsive)
-* [6. Testeos de usabilidad](#6-testeos-de-usabilidad)
+* [6. Testeos de usabilidad](#6-testeos-de-usabilidad)e
 * [7. Objetivos de aprendizaje](#7-objectivos-de-aprendizaje)
 * [8. Checklist](#8-checklist)
 

@@ -1,641 +1,331 @@
-# Data Lovers
-
+# **Readme:**
 ## Índice
+1. Preámbulo
+2. Objetivos de aprendizaje 
+3. Resumen del proyecto
+4. Historias de usuarios 
+5. Problemas de usabilidad
+6. Prototipos
+7. Enlace a Zeplin
+8. Test implementados
+9. Referencias
+****
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Consideraciones técnicas](#7-consideraciones-técnicas)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
-* [9. Checklist](#9-checklist)
+**1. Preámbulo**
 
-***
+**Breaking Bad**
+Breaking Bad es una serie de televisión estadounidense creada y producida por Vince Gilligan. Situada y producida en Albuquerque, Nuevo México, consiste en la historia de Walter White, un profesor de química al que diagnostican un cáncer de pulmón inoperable. Walter pasa a una vida de crimen produciendo y distribuyendo metanfetamina junto a un ex-estudiante, Jesse Pinkman, con el objetivo de conseguir suficiente dinero para el futuro de su familia tras su inevitable muerte.
 
-## 1. Preámbulo
+Los usurarios de este producto serán seguidores de la serie Breaking Bad y curiosos.
 
-Según [Forbes](https://www.forbes.com/sites/bernardmarr/2018/05/21/how-much-data-do-we-create-every-day-the-mind-blowing-stats-everyone-should-read),
-el 90% de la data que existe hoy ha sido creada durante los últimos dos años.
-Cada día generamos 2.5 millones de terabytes de datos, una cifra sin
-precedentes.
+El objetivo del producto es poder brindar una página donde pueda ver todos los personajes que aparecen en la serie, con algunas características relevantes como apodo, nombre de los actores y actrices que los interpretan, ocupación, estatus de vida del personaje, así como en que temporada de la serie participaron.
 
-No obstante, los datos por sí mismos son de poca utilidad. Para que esas
-grandes cantidades de datos se conviertan en **información** fácil de leer para
-los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
-hacerlo es creando _interfaces_ y _visualizaciones_.
+#### En la interfaz podrán encontrar:
++ El nombre de su personaje y que actor lo interpreta, un filtro para poder realizar la búsqueda de el personaje de su interés.
++ Conocer que personajes aparecen en cada temporada.
++ Podrán ordenar su búsqueda de la A a la Z y de forma inversa.
++ Divertirse encontrando ¿Qué personaje podrías ser tú?, al ingresar los datos requeridos y obteniendo un personaje afín.
++ Advertencia de error en caso de que el personaje sea incorrecto o el input quede vacío.
 
-En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte
-izquierda se puede construir una interfaz amigable y entendible por las
-usuarias, al lado derecho.
+Los usuarios podrán usar este producto cuando les surja alguna duda o curiosidad o quieran divertirse un rato recordando personajes de su serie favorita.
 
-![pokemon-data-to-ui](https://user-images.githubusercontent.com/12631491/218505816-c6d11758-9de4-428f-affb-2a56ea4d68c4.png)
+## ----**Let´s Cook!**
 
-## 2. Resumen del proyecto
+**2. Objetivos de aprendizaje**
+Los objetivos de aprendizaje a abarcar en este proyecto son los siguientes:
 
-En este proyecto **construirás una _página web_ para visualizar un
-_conjunto (set) de datos_** que se adecúe a lo que descubras que tu usuario
-necesita.
+HTML
+ Uso de HTML semántico
 
-Como entregable final tendrás una página web que permita **visualizar la data,
-filtrarla, ordenarla y hacer algún cálculo agregado**. Con cálculo agregado
-nos referimos a distintos cálculos que puedes hacer con la data para mostrar
-información aún más relevante para los usuarios (promedio, el valor máximo
-o mínimo, etc).
 
-Esta vez te proponemos una serie de datos de diferentes _temáticas_ para que
-explores y decidas con qué temática te interesa trabajar. Hemos elegido
-específicamente estos sets de datos porque creemos que se adecúan bien a esta
-etapa de tu aprendizaje.
+CSS
+ Uso de selectores de CSS
 
-Una vez que definas tu área de interés, buscar entender quién es tu usuario
-y qué necesita saber o ver exactamente; luego podrás construir la interfaz que
-le ayude a interactuar y entender mejor esos datos.
+ Modelo de caja (box model): borde, margen, padding
 
-Estos son datos que te proponemos:
+ Uso de flexbox en CSS
 
-* [Pokémon](src/data/pokemon/pokemon.json):
-  En este set encontrarás una lista con los 251 Pokémon de la región de Kanto
-  y Johto, junto con sus respectivas estadísticas usadas en el juego
-  [Pokémon GO](http://pokemongolive.com).
-  - [Investigación con jugadores de Pokémon Go](src/data/pokemon/README.md)
 
-* [League of Legends - Challenger leaderboard](src/data/lol/lol.json):
-  Este set de datos muestra la lista de campeones en una liga del
-  juego League of Legends (LoL).
-  - [Investigación con jugadores de LoL](src/data/lol/README.md)
+Web APIs
+ Uso de selectores del DOM
 
-* [Rick and Morty](src/data/rickandmorty/rickandmorty.json).
-  Este set nos proporciona la lista de los personajes de la serie Rick and
-  Morty. [API Rick and Morty](https://rickandmortyapi.com).
-  - [Investigación con seguidores de Rick and Morty](src/data/rickandmorty/README.md)
+ Manejo de eventos del DOM (listeners, propagación, delegación)
 
-* [Juegos Olímpicos de Río de Janeiro](src/data/athletes/athletes.json).
-  Este set nos proporciona la lista de los atletas que ganaron medallas en las
-  olímpiadas de Río de Janeiro.
-  - [Investigación con interesados en juegos olímpicos de Río de Janeiro](src/data/athletes/README.md)
+ Manipulación dinámica del DOM
 
-* [Studio Ghibli](src/data/ghibli/ghibli.json).
-  En este set encontrarás una lista de las animaciones y sus personajes del
-  [Studio Ghibli](https://ghiblicollection.com/).
-  - [Investigación con seguidores de las animaciones del Studio Ghibli](src/data/ghibli/README.md)
 
-* [Countries](src/data/countries/countries.json).
-  En este set encontrarás la informacion de varios paises
-  - [Investigación](src/data/countries/README.md)
+JavaScript
+ Diferenciar entre tipos de datos primitivos y no primitivos
 
-* [Tarot](src/data/tarot/tarot.json).
-  En este set encontrarás la informacion acerca de algunas cartas de tarot.
-  - [Investigación](src/data/tarot/README.md)
+ Arrays (arreglos)
 
-* [Breaking Bad](src/data/breakingbad/breakingbad.json).
-  En este set encontrarás la informacion sobre los personajes de la serie breakingbad.
-  - [Investigación con los seguidores de la serie Breaking Bad](src/data/breakingbad/README.md)
+ Objetos (key, value)
 
-* [Juego de Tronos](src/data/got/got.json).
-  En este set encontrarás la informacion sobre algunos de los personajes de la serie GOT.
-  - [Investigación con los seguidores de la serie GOT](src/data/got/README.md)
+ Variables (declaración, asignación, ámbito)
 
-El objetivo principal de este proyecto es que aprendas a diseñar y construir una
-interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el
-usuario necesita.
+ Uso de condicionales (if-else, switch, operador ternario, lógica booleana)
 
-El objetivo principal de este proyecto es que aprendas a diseñar y construir una
-interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el
-usuario necesita.
+ Uso de bucles/ciclos (while, for, for..of)
 
-## 3. Objetivos de aprendizaje
+ Funciones (params, args, return)
 
-Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
+ Pruebas unitarias (unit tests)
 
-### HTML
+ Módulos de ECMAScript (ES Modules)
 
-- [ ] **Uso de HTML semántico**
+ Uso de linter (ESLINT)
 
-  <details><summary>Links</summary><p>
+ Uso de identificadores descriptivos (Nomenclatura y Semántica)
 
-  * [HTML semántico](https://curriculum.laboratoria.la/es/topics/html/02-html5/02-semantic-html)
-  * [Semantics - MDN Web Docs Glossary](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-</p></details>
+ Diferenciar entre expresiones (expressions) y sentencias (statements)
 
-### CSS
 
-- [ ] **Uso de selectores de CSS**
+Control de Versiones (Git y GitHub)
+ Git: Instalación y configuración
 
-  <details><summary>Links</summary><p>
+ Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)
 
-  * [Intro a CSS](https://curriculum.laboratoria.la/es/topics/css/01-css/01-intro-css)
-  * [CSS Selectors - MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
-</p></details>
+ Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)
 
-- [ ] **Modelo de caja (box model): borde, margen, padding**
+ GitHub: Creación de cuenta y repos, configuración de llaves SSH
 
-  <details><summary>Links</summary><p>
+ GitHub: Despliegue con GitHub Pages
 
-  * [Box Model & Display](https://curriculum.laboratoria.la/es/topics/css/01-css/02-boxmodel-and-display)
-  * [The box model - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
-  * [Introduction to the CSS box model - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
-  * [CSS display - MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display)
-  * [display - CSS Tricks](https://css-tricks.com/almanac/properties/d/display/)
-</p></details>
+ GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)
 
-- [ ] **Uso de flexbox en CSS**
 
-  <details><summary>Links</summary><p>
+Centrado en el usuario
 
-  * [A Complete Guide to Flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-  * [Flexbox Froggy](https://flexboxfroggy.com/#es)
-  * [Flexbox - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
-</p></details>
+ Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro
 
-### Web APIs
 
-- [ ] **Uso de selectores del DOM**
+Diseño de producto
 
-  <details><summary>Links</summary><p>
+ Crear prototipos de alta fidelidad que incluyan interacciones
 
-  * [Manipulación del DOM](https://curriculum.laboratoria.la/es/topics/browser/02-dom/03-1-dom-methods-selection)
-  * [Introducción al DOM - MDN](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Introduction)
-  * [Localizando elementos DOM usando selectores - MDN](https://developer.mozilla.org/es/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)
-</p></details>
+ Seguir los principios básicos de diseño visual
 
-- [ ] **Manejo de eventos del DOM (listeners, propagación, delegación)**
 
-  <details><summary>Links</summary><p>
+Investigación
 
-  * [Introducción a eventos - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Events)
-  * [EventTarget.addEventListener() - MDN](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)
-  * [EventTarget.removeEventListener() - MDN](https://developer.mozilla.org/es/docs/Web/API/EventTarget/removeEventListener)
-  * [El objeto Event](https://developer.mozilla.org/es/docs/Web/API/Event)
-</p></details>
+ Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad
 
-- [ ] **Manipulación dinámica del DOM**
+Una vez culminado el proyecto consideremos que al menos el 70% de los objetivos a abarcar en el proyecto ha sido cubierto por ambas partcipantes.
 
-  <details><summary>Links</summary><p>
 
-  * [Introducción al DOM](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Introduction)
-  * [Node.appendChild() - MDN](https://developer.mozilla.org/es/docs/Web/API/Node/appendChild)
-  * [Document.createElement() - MDN](https://developer.mozilla.org/es/docs/Web/API/Document/createElement)
-  * [Document.createTextNode()](https://developer.mozilla.org/es/docs/Web/API/Document/createTextNode)
-  * [Element.innerHTML - MDN](https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML)
-  * [Node.textContent - MDN](https://developer.mozilla.org/es/docs/Web/API/Node/textContent)
-</p></details>
+**3. Resumen del proyecto**
+Lo primero que hicimos al empezar el proyecto fue definir el tema a trabajar, el cual las dos integrantes teníamos muy claro, nos decidimos por la temática de la serie Breaking Bad por la afinidad que ambas tenemos hacia ella.
 
-### JavaScript
+Después del estudio del README de proyecto empezamos a planificar los pasos a seguir. 
 
-- [ ] **Diferenciar entre tipos de datos primitivos y no primitivos**
+Acordamos trabajar con Trello para llevar a cabo la organización del proyecto:
+![](/src/Image/Trello.png)
 
-- [ ] **Arrays (arreglos)**
 
-  <details><summary>Links</summary><p>
+**4. Historias de usuario:**
 
-  * [Arreglos](https://curriculum.laboratoria.la/es/topics/javascript/04-arrays)
-  * [Array - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/)
-  * [Array.prototype.sort() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-  * [Array.prototype.forEach() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-  * [Array.prototype.map() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-  * [Array.prototype.filter() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-  * [Array.prototype.reduce() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-</p></details>
+##### Historia de Usuario 1
+![](/src/Image/Imagenes/HU1.jpg)
 
-- [ ] **Objetos (key, value)**
+![](/src/Image/Imagenes/HU1-1.jpg)
 
-  <details><summary>Links</summary><p>
+##### Historia de Usuario 2
+![](/src/Image/Imagenes/HU2.jpg)
 
-  * [Objetos en JavaScript](https://curriculum.laboratoria.la/es/topics/javascript/05-objects/01-objects)
-</p></details>
+##### Historia de Usuario 3
+![](/src/Image/Imagenes/HU3.jpg)
 
-- [ ] **Variables (declaración, asignación, ámbito)**
+![](/src/Image/Imagenes/HU3-1.jpg)
 
-  <details><summary>Links</summary><p>
+##### Historia de Usuario 4
+![](/src/Image/Imagenes/HU4.jpg)
 
-  * [Valores, tipos de datos y operadores](https://curriculum.laboratoria.la/es/topics/javascript/01-basics/01-values-variables-and-types)
-  * [Variables](https://curriculum.laboratoria.la/es/topics/javascript/01-basics/02-variables)
-</p></details>
+##### Historia de Usuario 5
+![](/src/Image/Imagenes/HU5.jpg)
 
-- [ ] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
 
-  <details><summary>Links</summary><p>
 
-  * [Estructuras condicionales y repetitivas](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/01-conditionals-and-loops)
-  * [Tomando decisiones en tu código — condicionales - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals)
-</p></details>
+**5. Problemas de usabilidad:**
 
-- [ ] **Uso de bucles/ciclos (while, for, for..of)**
+En este proyecto no se realizaron pruebas de usabilidad en cuanto a la interacción de un usuario con la interfaz, salvo las creadoras de la misma, por tanto los siguientes problemas y soluciones planteados están dados a partir de las distintas demos semanes que tuvimos una vez finalizaba el Sprint, en este sentido consideramos a futuro abordar la problemática de usabilidad de acuerdo a lo recomendado en la literatura oficial.
 
-  <details><summary>Links</summary><p>
+En función de la presentación en la primera demo, inicialmente realizamos un bosquejo genérico de la interfaz del proyecto:
 
-  * [Bucles (Loops)](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/02-loops)
-  * [Bucles e iteración - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration)
-</p></details>
+##### Problema uno: 
+La usabilidad aún no estab definida, sin embargo un problema presentado era el fondo de trabajo ya que era muy oscuro y presentaba problemas de integración de colores, por tanto nos recomendaron seguir una paleta de colores y encontrar un fondo más claro.
 
-- [ ] **Funciones (params, args, return)**
+##### solución: 
+Se cambió el fondo y se buscó una paleta de colores para trabajar.
 
-  <details><summary>Links</summary><p>
 
-  * [Funciones (control de flujo)](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/03-functions)
-  * [Funciones clásicas](https://curriculum.laboratoria.la/es/topics/javascript/03-functions/01-classic)
-  * [Arrow Functions](https://curriculum.laboratoria.la/es/topics/javascript/03-functions/02-arrow)
-  * [Funciones — bloques de código reutilizables - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Functions)
-</p></details>
+##### Problema dos:
+Posteriormente el fondo de la interfaz quedó fijado conjunto al título como una imagen, en este punto el fondo no era problema pues sus colores eran más armónicos y llamativos, pero el título como parte del fondo presentaba un inconveniente a la hora de desplazar las imágenes a través de la página, ya que en un punto cubrían el título, a su vez nos indicaron que las imágenes representadas en tarjetas tenían colores que de alguna manera hacían ruido visual con el fondo.
 
-- [ ] **Pruebas unitarias (unit tests)**
+##### solución: 
+Para corregir las imágenes se empleó la propiedad filter en CSS con una escala de grises al 80%.
+El título se eliminó de la imagen fondo y se colocó como imagen desde una URL en el header en index.HTML.
 
-  <details><summary>Links</summary><p>
 
-  * [Empezando con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/getting-started)
-</p></details>
+##### Problema tres: 
+En otra demostración la página era un poco más funcional, se podía ordenar de A a Z y a la inversa los datos de Json, también se podía filtrar los personajes de acuerdo a su aparición en una temporada específica, teníamos dos filtros más, uno por actor o actriz y uno por apodo o personaje que aún no eran funcionales. En este punto nos indicaron que eran muchos filtros y por tanto podíamos unir estos dos últimos que áun no tenían funcionalidad en un buscador tipo input.
 
-- [ ] **Módulos de ECMAScript (ES Modules)**
+##### Solución: 
+Eliminamos los filtros (actor/actriz), (personaje/apodo) y creamos un buscador con accesibilidad para personaje, actor, actriz y apodo.
 
-  <details><summary>Links</summary><p>
 
-  * [import - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/import)
-  * [export - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/export)
-</p></details>
+##### Problema cuatro: 
+En la interfaz al usar el buscador de forma incorrecta, es decir ingresar un dato inválido o pulsar buscar dejando el input vacío se generaba un alert que indicaba error, en este sentido nos indicaron que era muy pequeño y nos recomendaron un mensaje quizás a modo de pantalla que se activara en estos casos.
 
-- [ ] **Uso de linter (ESLINT)**
+##### Solución: 
+Se creó una imagen que alertara sobre un ingreso incorrecto y sobre el input vacío y se gestionó como una superposición al interfaz original.
 
-- [ ] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
 
-- [ ] **Diferenciar entre expresiones (expressions) y sentencias (statements)**
+##### Problema cinco: 
+No teníamos un cálculo con los datos de Json ni como acceder a ese cálculo, nos recomendaron emplear un botón.
 
-### Control de Versiones (Git y GitHub)
+##### Solución: 
+Se creó un botón que tendría la finalidad de llevar al usuario a otra pantalla que también estaría superpuesta a la interfaz original y donde se vería otra imagen alusiva a la serie y algunos cuadros de ingreso de texto asociados al cálculo, a esta altura del proyecto entre las diversas opciones de manipular los datos del Json para realizar un cálculo con ellos, el que más nos hizo sentido fue emplear el método math.random() sin embargo ya habíamos creado la pantalla dónde solicitábamos al usuario ingresar sus datos (nombre, signo zodiacal y elemento químico favorito) y a nivel de código transformábamos estos datos en ASCII y teníamos un promedio, pero ya que no logramos vincular esta información con los datos de Json a manera de que se generara una carta aleatoria, decidimos que el botón procesar además de obtener el promedio antes mencionado, ejecutara el método math.random() en conjunto de math.floor para que el valor final fuese entero y correspondiera a los datos de Json.
 
-- [ ] **Git: Instalación y configuración**
 
-- [ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
+##### Problema seis: 
+La tarjeta aleatoria no se mostraba en la interfaz asociada a cálculo. Nos recomendaron colocar display:none en Js a la interfaz de cálculo.
 
-- [ ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
+##### Solución: 
+Como la interfaz de cálculo es una superposición de imágenes respecto a la interfaz original pero al generar la tarjeta aleatoria se está ultilizando la función que accede a los datos de Json vinculada a el main incial, la tarjeta aleatoria se mostraba aquí, por tanto añadimos display:none en la función de Js de la interfaz de cálculo justo antes de que se ejecutara la generación de la carta aleatoria.
 
-- [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
 
-- [ ] **GitHub: Despliegue con GitHub Pages**
+##### Problema siete: 
+La página tiene datos de los personajes en inglés pero los botones de accesibilidad están español.
 
-  <details><summary>Links</summary><p>
+##### Solución: 
+Decidimos pasar todos los botones e información general de la interfaz que estaba en español a inglés.
 
-  * [Sitio oficial de GitHub Pages](https://pages.github.com/)
-</p></details>
 
-- [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
+##### Problema ocho: 
+La carta aleatoria debería estar centrada.
 
-### Centrado en el usuario
+##### Solución:
+No encontramos solución, probámos variar propiedades y atributos en CSS para resolverlo pero al momento de culminar el proyecto no lo habíamos logrado.
 
-- [ ] **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
 
-### Diseño de producto
+##### Problema nueve:  
+Los subtítulos de los datos no se observan.
 
-- [ ] **Crear prototipos de alta fidelidad que incluyan interacciones**
+##### Solución:
+No encontramos solución, debido a la forma a la que accedemos a los datos de Json y como logramos mostrarlos en la interfaz, desconocemos como agregar los subtítulos, en el punto de finalizar el proyecto lo más que se nos ha ocurrido es modificar los datos en Json para que contengan tales valores, pero reconocemos que no es práctico y por tanto no es una forma correcta de trabajar.
 
-- [ ] **Seguir los principios básicos de diseño visual**
 
-### Investigación
+**6.Prototipos:**
 
-- [ ] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
+### #### ##Se creó el prototipo de baja fidelidad:
+![](/src/Image/Imagenes/Prototipo_de_baja_fidelidad.png)
 
-  <details><summary>Links</summary><p>
+### #### ##Despúes se trabajó en el prototipo de alta fidelidad:
+![](/src/Image/PrototipoAltaF.png)
 
-  * [Intro a testeos usabilidad](https://coda.io/@bootcamp-laboratoria/contenido-ux/test-de-usabilidad-15)
-  * [Pruebas con Usuarios 1 — ¿Qué, cuándo y para qué testeamos?](https://eugeniacasabona.medium.com/pruebas-con-usuarios-1-qu%C3%A9-cu%C3%A1ndo-y-para-qu%C3%A9-testeamos-7c3a89b4b5e7)
-</p></details>
+### #### ##Finalmente el prototipo de la interfaz terminada en 4 fases es el siguiente:
+Fase 1: Presentación inicial.
+![](/src/Image/PrototipoFinalA.png)
 
-## 4. Consideraciones generales
+Fase 2: Mensaje de error para personaje no válido o input vacío.
+![](/src/Image/PrototipoFinalB.png)
 
-* Este proyecto se debe resolver en duplas.
-* El rango de tiempo estimado para completar el proyecto es de 3 a 4 Sprints.
-* El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
-  interfaz será desplegada usando [GitHub Pages](https://pages.github.com/).
+Fase 3: Interfaz de ¿Qué personaje serías?.
+![](/src/Image/PrototipoFinalC.png)
 
-## 5. Criterios de aceptación mínimos del proyecto
+Fase 4: Resultado de ¿Qué personaje serías?.
+![](/src/Image/PrototipoFinalD.png)
 
-Los criterios para considerar que has completado este proyecto son:
 
-### Definición del producto
+**7. Enlace a Zeplin**
+En esta oportunidad trabajamos el esquema del proyecto en Trello y Pptx: los diversos elementos empleados se encuentran en el prototipo de baja fidelidad, de alta fidelidad y las distintas fases del prototipo final antes mostradas, también incluímos en esta descripción de proyecto una vista general de la planificación y los Sprints trabajados en TRELLO; no utilizamos figma ni herramientas a fines por tanto no resulta fluído a fechas de termino de proyecto llevar la información de Pptx a figma y de ahí a Zeplin, en ese sentido este objetivo se esperará cubrir en el próximo proyecto por ambas participantes.
 
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
-contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuario.
 
-### Historias de usuario
+**8.Test implementados:**
 
-Una vez que entiendas las necesidades de tus usuarios, escribe las [Historias
-de Usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) que representen
-todo lo que el usuario necesita hacer/ver. Las **Historias de Usuario** deben
-ser el resultado de tu proceso de investigación o _research_ de tus usuarios.
+Los test se crearon a partir de un ejemplo básico preestablecido en el boilerplate del proyecto incial, un test por cada función asociada a la funcionalidad de la interfaz, estos fueron: filtrar, ordenarAZ, ordenarZA, temporada, textoAASCII y encontrar. Al correr los test creados con el comando npm test una vez todos estuvieron listos y sin fallas el resultado fue el siguiente:
 
-Asegúrate de incluir la definición de terminado (_definition of done_) y los
-Criterios de Aceptación para cada una.
+![](/src/Image/ResultadosTest.png)
 
-En la medida de lo posible, termina una historia de usuario antes de pasar
-a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
 
-### Diseño de la Interfaz de Usuario
+**9.Referencias:**
 
-#### Prototipo de baja fidelidad
+[Clave SSH](https://docs.github.com/es/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent "Clave SSH")
 
-Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
-solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
-iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
-`README.md`.
+[Fork y PR](https://www.loom.com/share/adccc2b5b73940a3bf9835e3d3eb4ca8?sid=89d83378-08ed-4616-98c5-5ae665d23ca4 "Fork y PR")
 
-#### Prototipo de alta fidelidad
+[Git flujo de trabajo colaborativo](https://drive.google.com/file/d/1aIugYCkKdZtm4GHsE5y8ea_MLxaOGJ9T/view "Git flujo de trabajo colaborativo")
 
-Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
-_User Interface_). Para eso debes aprender a utilizar alguna herramienta de
-diseño visual. Nosotros te recomendamos [Figma](https://www.figma.com/) que es
-una herramienta que funciona en el navegador y, además, puedes crear una cuenta
-gratis. Sin embargo, eres libre de utilizar otros editores gráficos como
-Illustrator, Photoshop, PowerPoint, Keynote, etc.
+[Git/GitHub colaborativo](https://www.youtube.com/watch?v=EOO6Ze9_lDY "Git/GitHub colaborativo")
 
-El diseño debe representar el _ideal_ de tu solución. Digamos que es lo que
-desearías implementar si tuvieras tiempo ilimitado para trabajar. Además, tu
-diseño debe seguir los fundamentos de _[visual design](https://coda.io/d/Bootcamp-UX-Contenido_dqkqk2rV9Z2/Diseno-de-interfaces_suOT7#_luWsQ)_.
+[Uso básico Git](https://diego.com.es/uso-basico-de-git "Uso básico Git")
 
-#### Testeos de usabilidad
+[Json hero](https://jsonhero.io/j/GB3QFlROMeoC "Json hero")
 
-Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
-en base a los resultados, deberás iterar tus diseños. Cuéntanos
-qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
+[Trabajando con Json](https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/JSON "Trabajando con Json")
 
-### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
+[Diseño páginas web](https://www.behance.net/gallery/173840021/Cooking-up-trouble "Diseño páginas web")
 
-Luego de diseñar tu interfaz de usuario deberás trabajar en su implementación.
-**No** es necesario que construyas la interfaz exactamente como la diseñaste.
-Tu tiempo de hacking es escaso, así que deberás priorizar
+[paleta de colores](https://colormagic.app/ "paleta de colores")
 
-Como mínimo, tu implementación debe:
+[paleta de colores con tu diseño previsto](https://color.adobe.com/explore "paleta de colores con tu diseño previsto")
 
-1. Mostrar la data en una interfaz: puede ser un card, una tabla, una lista,
-   etc.
-2. Permitir al usuario interactuar para obtener la infomación que necesita.
-3. Ser _responsive_, es decir, debe visualizarse sin problemas desde distintos
-   tamaños de pantallas: móviles, tablets y desktops.
-4. Que la interfaz siga los fundamentos de _visual design_.
+[Galería de Imágenes con FETCH y DOM](https://www.youtube.com/watch?v=UyxILLXW2dQ "Galería de Imágenes con FETCH Y DOM")
 
-### Pruebas unitarias
+[InnerHTML](https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML "Inner.HTML")
 
-El _boilerplate_ de este proyecto no incluye Pruebas Unitarias (_tests_), así es
-que  tendrás que escribirlas tú para las funciones encargadas de  _procesar_,
-_filtrar_ y _ordenar_ la data, así como _calcular_ estadísticas.
+[Grid Template](https://developer.mozilla.org/es/docs/Web/CSS/grid-template-columns "Grid Template")
 
-Tus _pruebas unitarias_ deben dar una cobertura del 70% de _statements_
-(_sentencias_), _functions_ (_funciones_), _lines_ (_líneas_), y _branches_
-(_ramas_) del archivo `src/data.js` que contenga tus funciones y está detallado
-en la sección de [Consideraciones técnicas](#srcdatajs).
+[Crear un menú centrado](https://programacion.net/articulo/como_crear_un_menu_centrado_en_bootstrap_navbar_1854#:~:text=C%C3%B3digo%20HTML&text=El%20men%C3%BA%20se%20podr%C3%A1%20colocar,center%20para%20centrar%20el%20men%C3%BA. "Crear un menú centrado") 
 
-## 6. Hacker edition
+[Cambiar nav al hacer scroll](https://www.lawebdelprogramador.com/foros/CSS/1708707-Como-cambiar-mi-nav-al-hacer-scroll.html#google_vignette "Cambiar nav al hacer scroll")
 
-Las secciones llamadas _Hacker Edition_ son **opcionales**. Si **terminaste**
-con todo lo anterior y te queda tiempo, intenta completarlas. Así podrás
-profundizar y/o ejercitar más sobre los objetivos de aprendizaje del proyecto.
+[Formato de botones](https://markodenic.com/tools/buttons-generator/ "Formato de botones")
 
-Features/características extra sugeridas:
+[Etiqueta picture en HTML](https://blog.bitsrc.io/why-you-should-use-picture-tag-instead-of-img-tag-b9841e86bf8b "Etiqueta picture en HTML")
 
-* En lugar de consumir la data estática brindada en este repositorio, puedes
-  consumir la data de forma dinámica, cargando un archivo JSON por medio de
-  `fetch`. La carpeta `src/data` contiene una versión `.js` y una `.json` de
-  de cada set datos.
-* Agregarle a tu interfaz de usuario implementada visualizaciones gráficas. Para
-  ello te recomendamos explorar librerías de gráficas como
-  [Chart.js](https://www.chartjs.org/)
-  o [Google Charts](https://developers.google.com/chart/).
-* 100% Coverage
+[Filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter "FILTER")
 
-## 7. Consideraciones técnicas
+[Filter para una imagen](https://css-tricks.com/apply-a-filter-to-a-background-image/ "Filter para imagen" )
 
-La lógica del proyecto debe estar implementada completamente en JavaScript
-(ES6), HTML y CSS. En este proyecto NO está permitido usar librerías o
-frameworks, solo [vanilla JavaScript](https://medium.com/laboratoria-how-to/vanillajs-vs-jquery-31e623bbd46e),
-con la excepción de librerías para hacer gráficas (charts); ver
-[_Parte opcional_](#6-hacker-edition) más arriba.
+[Filter para una imagen](https://codepen.io/3dms/pen/abPgxm "Filter para imagen")
 
-El _boilerplate_ contiene una estructura de archivos como punto de partida así
-como toda la configuración de dependencias:
+[Hover a una img](https://www.youtube.com/watch?v=Z5MoBm99w1Q "Hover a una img")
 
-```text
-.
-├── EXTRA.md
-├── README.md
-├── package.json
-├── src
-|  ├── data (según con qué data trabajes)
-|  |  ├── lol
-|  |  |  ├── lol.js
-|  |  |  ├── lol.json
-|  |  |  └── README.md
-|  |  ├── pokemon
-|  |  |  ├── pokemon.js
-|  |  |  ├── pokemon.json
-|  |  |  └── README.md
-|  |  └── rickandmorty
-|  |  |  ├── rickandmorty.js
-|  |  |  ├── rickandmorty.json
-|  |  |  └── README.md
-|  |  └── athletes
-|  |  |  ├── athletes.js
-|  |  |  ├── athletes.json
-|  |  |  └── README.md
-|  |  └── ghibli
-|  |  |  ├── ghibli.js
-|  |  |  ├── ghibli.json
-|  |  |  └── README.md
-|  ├── data.js
-|  ├── index.html
-|  ├── main.js
-|  └── style.css
-└── test
-   └── data.spec.js
+[Overlay en CSS](https://www.w3schools.com/howto/howto_css_overlay.asp "Overlay en CSS")
 
-directory: 7 file: 20
-```
+[Z-Index](https://developer.mozilla.org/es/docs/Web/CSS/z-index "Z-Index")
 
-### `src/index.html`
+[Como crear una página error personalizada](https://www.youtube.com/watch?v=FconkeF_VZc "Como crear una página error personalizada" )
 
-Como en el proyecto anterior, existe un archivo `index.html`. Como ya sabes,
-acá va la página que se mostrará al usuario. También nos sirve para indicar
-qué scripts se usarán y unir todo lo que hemos hecho.
+[If...else]( https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/if...else "If...Else")
 
-### `src/main.js`
+[JS proyectos](https://www.freecodecamp.org/ "JS proyectos")
 
-Recomendamos usar `src/main.js` para todo tu código que tenga que ver con
-mostrar los datos en la pantalla. Con esto nos referimos básicamente a la
-interacción con el DOM. Operaciones como creación de nodos, registro de
-manejadores de eventos (_event listeners_ o _event handlers_), ....
+[Métodos de arreglo](https://www.youtube.com/watch?v=bkgXlQp5hbI "Métodos de arreglo")
 
-Esta no es la única forma de dividir tu código, puedes usar más archivos y
-carpetas, siempre y cuando la estructura sea clara para tus compañeras.
+[Math.Random()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/random "Math.Random()")
 
-En este archivo encontrarás una serie de _imports_ _comentados_. Para _cargar_
-las diferentes fuentes de datos tendrás que _descomentar_ la línea
-correspondiente.
+[Código ASCII](https://elcodigoascii.com.ar/ "Código ASCII")
 
-Por ejemplo, si "descomentamos" la siguiente línea:
+[Guía testing](https://www.youtube.com/playlist?list=PLiAEe0-R7u8kqvibxkK9tqqoJXnhgtefg "Guía testing")
 
-```js
-// import data from './data/lol/lol.js';
-```
+[Test Camp 17.08.23](https://drive.google.com/file/d/1fsgOKHYxGbZPE_5-PK-L7o3IXsGFhjud/view "Test Camp 17.08.23")
 
-La línea quedaría así:
+[Agregar música a una interfaz](https://www.youtube.com/watch?v=h762vNl-djM "Agregar música a una interfaz")
 
-```js
-import data from './data/lol/lol.js';
-```
+[Música Breaking Bad](https://www.youtube.com/watch?v=-KfC7Nl8V4E "Música Breaking Bad")
 
-Y ahora tendríamos la variable `data` disponible en el script `src/main.js`.
+[Responsive](https://www.youtube.com/watch?v=Km_Fug5Xs5w&t=94s "Responsive")
 
-### `src/data.js`
+[Responsive](https://www.youtube.com/watch?v=yUfcpPkOajA "Responsive")
 
-El corazón de este proyecto es la manipulación de datos a través de arreglos
-y objetos.
+[Simulador Responsive](https://chrome.google.com/webstore/detail/mobile-simulator-responsi/ckejmhbmlajgoklhgbapkiccekfoccmk "Simulador Responsive")
 
-Te recomendamos que este archivo contenga toda la funcionalidad que corresponda
-a obtener, procesar y manipular datos (tus funciones). Por ejemplo:
+[Eslint](https://www.freecodecamp.org/espanol/news/que-es-linting-y-eslint/ "Eslint")
 
-* `filterData(data, condition)`: esta función `filter` o filtrar recibiría la
-  data, y nos retornaría aquellos datos que sí cumplan con la condición.
+[Bibliografía Readme](https://scrum.menzinsky.com/2021/09/como-entender-la-diferencia-entre.html "Bibliografía Readme")
 
-* `sortData(data, sortBy, sortOrder)`: esta función `sort` u ordenar
-  recibe tres parámetros.
-  El primer parámetro, `data`, nos entrega los datos.
-  El segundo parámetro, `sortBy`, nos dice con respecto a cuál de los campos de
-  la data se quiere ordenar.
-  El tercer parámetro, `sortOrder`, indica si se quiere ordenar de manera
-  ascendente o descendente.
+[Escribir readme Markdown](https://pandao.github.io/editor.md/en.html "Escribir readme Markdown")
 
-* `computeStats(data)`: la función `compute` o calcular, nos permitirá hacer
-  cálculos estadísticos básicos para ser mostrados de acuerdo a la data
-  proporcionada.
-
-Estos nombres de funciones y de parámetros son solamente referenciales, lo que
-decidas depende de tu propia implementación.
-
-Estas funciones deben ser [_puras_](https://medium.com/laboratoria-developers/introducci%C3%B3n-a-la-programaci%C3%B3n-funcional-en-javascript-parte-2-funciones-puras-b99e08c2895d)
-e independientes del DOM. Estas funciones serán después usadas desde el archivo
-`src/main.js`, al cargar la página, y cada vez que el usuario interactúe (click,
-filtrado, ordenado, ...).
-
-### `src/data`
-
-En esta carpeta están los datos de las diferentes fuentes. Encontrarás una
-carpeta por cada fuente, y dentro de cada carpeta dos archivos: uno con la
-extensión `.js` y otro `.json`. Ambos archivos contienen la misma data; la
-diferencia es que el `.js` lo usaremos a través de una etiqueta `<script>`,
-mientras que el `.json` está ahí para opcionalmente cargar la data de forma
-asíncrona con [`fetch()`](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
-(ver sección de [_Parte Opcional_](#6-hacker-edition)).
-
-### `test/data.spec.js`
-
-Tendrás también que completar las pruebas unitarias de las funciones
-implementadas en el archivo `data.js`.
-
-## 8. Pistas, tips y lecturas complementarias
-
-### Primeros pasos
-
-Súmate al canal de Slack
-[#project-data-lovers](https://claseslaboratoria.slack.com/archives/C03MV35EP5M)
-para conversar y pedir ayuda del proyecto.
-
-Antes de empezar a escribir código, debes definir qué deberá hacer el producto
-en base al conocimiento que puedas obtener de tu usuario. Estas preguntas te
-pueden ayudar:
-
-* ¿Quiénes son los principales usuarios de producto?
-* ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
-* ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
-* ¿Cuándo utilizan o utilizarían el producto?
-* Toda tu investigación previa debe tener como resultado todas las Historias
-  de Usuario de tu proyecto.
-* No hagas los prototipos de alta fidelidad de todas tus Historias. Comienza
-  solamente por los que se necesiten para tu Sprint 1 (semana 1 de trabajo). Más
-  pistas en la guía de organización para el proyecto.
-
-Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
-
-1. Una de las integrantes del equipo debe realizar un :fork_and_knife:
-   [fork](https://help.github.com/articles/fork-a-repo/) del repo de tu cohort,
-   tus _coaches_ te compartirán un _link_ a un repo y te darán acceso de lectura
-   en ese repo. La otra integrante del equipo deber hacer un fork **del
-   repositorio de su compañera** y
-   [configurar](https://gist.github.com/BCasal/026e4c7f5c71418485c1) un `remote`
-   hacia el mismo.
-2. :arrow_down: [Clona](https://help.github.com/articles/cloning-a-repository/)
-   tu _fork_ a tu computadora (copia local).
-3. 📦 Instala las dependencias del proyecto con el comando `npm install`. Esto
-   asume que has instalado [Node.js](https://nodejs.org/) (que incluye [npm](https://docs.npmjs.com/)).
-4. Si todo ha ido bien, deberías poder ejecutar las :traffic_light:
-   pruebas unitarias (unit tests) con el comando `npm test`.
-5. Para ver la interfaz de tu programa en el navegador, usa el comando
-  `npm start` para arrancar el servidor web y dirígete a
-  `http://localhost:5000` en tu navegador.
-6. A codear se ha dicho! :rocket:
-
-### Contenido de referencia
-
-#### Diseño de experiencia de usuario (User Experience Design)
-
-* Investigación con usuarios / entrevistas
-* Principios de diseño visual
-
-#### Desarrollo Front-end
-
-* Unidad de testing en curso de JavaScript en LMS.
-* Unidad de arreglos en curso de JavaScript en LMS.
-* Unidad de objetos en curso de JavaScript en LMS.
-* Unidad de funciones en curso de JavaScript en LMS.
-* Unidad de DOM en curso de Browser JavaScript en LMS.
-* [Array en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array)
-* [Array.sort en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/sort)
-* [Array.map en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map)
-* [Array.filter en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/filter)
-* [Array.reduce en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce)
-* [Array.forEach en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/forEach)
-* [Object.keys en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/keys)
-* [Object.entries en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/entries)
-* [Fetch API en MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-* [json.org](https://json.org/json-es.html)
-* [expressions-vs-statements](https://2ality.com/2012/09/expressions-vs-statements.html)
-* [expresión vs sentencia](https://openclassrooms.com/en/courses/4309531-descubre-las-funciones-en-javascript/5108986-diferencia-entre-expresion-y-sentencia)
-* [datos atómicos vs datos estructurados](https://www.todojs.com/tipos-datos-javascript-es6/)
-* [Modulos: Export](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/export)
-* [Modulos: Import](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/import)
-
-#### Herramientas
-
-* [Git](https://git-scm.com/)
-* [GitHub](https://github.com/)
-* [GitHub Pages](https://pages.github.com/)
-* [Node.js](https://nodejs.org/)
-* [Jest](https://jestjs.io/)
-
-#### Organización del Trabajo
-
-* [Historias de Usuario](https://www.youtube.com/watch?v=ky6wFiF5vMk&t=344s).
-  Ojo que Cris no diferencia _Definición de terminado_ de _Criterios de
-  Aceptación_ y nosotros sí lo haremos. Más detalles en la guía.
-* [Cómo dividir H.U.](https://www.youtube.com/watch?v=Ueq786iZ30I&t=341s)
-* [Guía para Data Lovers](https://docs.google.com/presentation/d/e/2PACX-1vQhx9D36NjpH-Daea-ITPUDUzNL8ZiNAprq_7b5PSUrfutk45tEtaOLz2lmd8f54_5jX1hypDM8f8SM/pub?start=false&loop=false&delayms=60000)
-
-## 9. Checklist
-
-* [ ] Usa VanillaJS.
-* [ ] Pasa linter (`npm run pretest`)
-* [ ] Pasa tests (`npm test`)
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
-  lines y branches.
-* [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [ ] Incluye historias de usuario en `README.md`.
-* [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
-  `README.md`.
-* [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
-  en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
-* [ ] Incluye el listado de problemas que detectaste a través de tests de
-  usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
-* [ ] UI: Es _responsive_.
+[Markdown guide](https://www.markdownguide.org/cheat-sheet/ "Mardown guide")
